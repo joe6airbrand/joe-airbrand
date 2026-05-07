@@ -429,15 +429,37 @@
     // projector gate. Content overlays use --p to lead the scroll
     // (outgoing overshoots, incoming holds back). Clamp ±0.7 so
     // off-screen slides don't push their text ridiculously far.
+    //
+    // First slide: at scrollY≈0 the slide center often sits *above* the
+    // viewport center (slide is 80dvh, can't scroll up to center it),
+    // so raw p is negative and every overlay that shares --p (meta + title)
+    // shifts upward together. We store an anchor p measured when the
+    // document is at the top and subtract it only for slides[0] so
+    // "home" reads as p≈0 without changing other slides.
     let raf = 0;
+    let firstSlideParallaxAnchor = 0;
     function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+    function recalcFirstSlideParallaxAnchor() {
+      const s = slides[0];
+      if (!s) return;
+      const vh = window.innerHeight;
+      const rect = s.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      firstSlideParallaxAnchor = (center - vh / 2) / vh;
+    }
     function updateParallax() {
       raf = 0;
       const vh = window.innerHeight;
+      // Only refresh anchor at rest — avoids killing parallax on the first px of scroll.
+      if (window.scrollY <= 2) recalcFirstSlideParallaxAnchor();
+
+      const first = slides[0];
       for (const slide of slides) {
         const rect = slide.getBoundingClientRect();
         const center = rect.top + rect.height / 2;
-        const p = clamp((center - vh / 2) / vh, -0.7, 0.7);
+        let raw = (center - vh / 2) / vh;
+        if (slide === first) raw -= firstSlideParallaxAnchor;
+        const p = clamp(raw, -0.7, 0.7);
         slide.style.setProperty("--p", p.toFixed(3));
       }
     }
@@ -445,7 +467,10 @@
       if (!raf) raf = requestAnimationFrame(updateParallax);
     }
     window.addEventListener("scroll", scheduleParallax, { passive: true });
-    window.addEventListener("resize", scheduleParallax);
+    window.addEventListener("resize", () => {
+      if (window.scrollY <= 2) recalcFirstSlideParallaxAnchor();
+      scheduleParallax();
+    });
     updateParallax(); // initial paint
 
     // ====== SNAP TIMING (BEGIN — easy revert section) ===============
