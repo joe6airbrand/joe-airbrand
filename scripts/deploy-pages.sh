@@ -47,6 +47,12 @@ rsync -a --delete \
   --exclude '.DS_Store' \
   "$SOURCE/" ./
 
+# Bust browser/CDN caches for gallery JPEGs: same URL may stick even when the file bytes change.
+if [[ -f index.html ]] && grep -q 'images/gallery/' index.html; then
+  V="$(git -C "$ROOT" rev-parse --short HEAD)"
+  sed -i '' -E 's|src="(images/gallery/[^"?]+\.jpg)(\?[^"]*)?"|src="\1?v='"$V"'"|g' index.html
+fi
+
 git add -A
 if git diff --staged --quiet 2>/dev/null; then
   printf 'No file changes to deploy for %s.\n' "$BRANCH"
