@@ -47,10 +47,14 @@ rsync -a --delete \
   --exclude '.DS_Store' \
   "$SOURCE/" ./
 
-# Bust browser/CDN caches for gallery JPEGs: same URL may stick even when the file bytes change.
-if [[ -f index.html ]] && grep -q 'images/gallery/' index.html; then
+# Bust caches: gallery JPEGs + main CSS/JS (mobile Safari aggressively caches styles.css).
+if [[ -f index.html ]]; then
   V="$(git -C "$ROOT" rev-parse --short HEAD)"
-  sed -i '' -E 's|src="(images/gallery/[^"?]+\.jpg)(\?[^"]*)?"|src="\1?v='"$V"'"|g' index.html
+  if grep -q 'images/gallery/' index.html; then
+    sed -i '' -E 's|src="(images/gallery/[^"?]+\.jpg)(\?[^"]*)?"|src="\1?v='"$V"'"|g' index.html
+  fi
+  sed -i '' -E 's|(href="styles\.css)(\?[^"]*)?"|\1?v='"$V"'"|g' index.html
+  sed -i '' -E 's|(src="script\.js)(\?[^"]*)?"|\1?v='"$V"'"|g' index.html
 fi
 
 git add -A
