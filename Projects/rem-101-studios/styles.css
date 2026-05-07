@@ -2752,9 +2752,10 @@ h1, h2, h3, h4, p { margin: 0; }
   }
 }
 
-/* iPhone / small phones — tune focal points & meta without affecting tablet/desktop.
-   Override object-position per slide here only when needed; inherits tablet px values otherwise. */
-@media (max-width: 430px) {
+/* Narrow phones — tune focal points & meta without affecting tablet/desktop.
+   max-width 480px (not 430): several iPhones report 393–430 CSS px; Pro Max / Plus can land
+   just above 430 and would otherwise get only the ≤768px tablet crops, diverging from devtools. */
+@media (max-width: 480px) {
   .gallery-slide-meta-top {
     top: max(3.25dvh, env(safe-area-inset-top, 0px));
     left: max(3.25dvh, env(safe-area-inset-left, 0px));
@@ -2786,11 +2787,21 @@ h1, h2, h3, h4, p { margin: 0; }
   }
 }
 
-/* Narrow landscape (e.g. iPhone rotated ~596×400): tuned portrait crops read poorly.
-   Reset to the base centered crop (matches default .gallery-slide-image). */
-@media (max-width: 768px) and (orientation: landscape) {
-  .gallery-page .gallery-slide .gallery-slide-image,
-  .gallery-page .gallery-slide .gallery-slide-image-off {
+/* Phone landscape: width is often *above* 768px, so (max-width:768px) never matched and
+   min-width:769px per-slide % focal rules still applied — looked wrong. Short landscape
+   viewports (typical phone sideways ~390–430px tall) reset to default centered crop.
+   Specificity includes [data-slide] so this beats the desktop gallery focal block. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .gallery-page .gallery-slide[data-slide="0"] .gallery-slide-image,
+  .gallery-page .gallery-slide[data-slide="0"] .gallery-slide-image-off,
+  .gallery-page .gallery-slide[data-slide="1"] .gallery-slide-image,
+  .gallery-page .gallery-slide[data-slide="1"] .gallery-slide-image-off,
+  .gallery-page .gallery-slide[data-slide="2"] .gallery-slide-image,
+  .gallery-page .gallery-slide[data-slide="2"] .gallery-slide-image-off,
+  .gallery-page .gallery-slide[data-slide="3"] .gallery-slide-image,
+  .gallery-page .gallery-slide[data-slide="3"] .gallery-slide-image-off,
+  .gallery-page .gallery-slide[data-slide="4"] .gallery-slide-image,
+  .gallery-page .gallery-slide[data-slide="4"] .gallery-slide-image-off {
     object-position: center;
   }
 }
