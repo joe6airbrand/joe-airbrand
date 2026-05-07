@@ -15,7 +15,11 @@ if ! gh auth status >/dev/null 2>&1; then
   exit 1
 fi
 
-REPO_JSON="$(gh repo view --json nameWithOwner -q .nameWithOwner)"
+if [[ -n "${GH_PAGES_REPO:-}" ]]; then
+  REPO_JSON="$GH_PAGES_REPO"
+else
+  REPO_JSON="$(gh repo view --json nameWithOwner -q .nameWithOwner)"
+fi
 if gh api "repos/${REPO_JSON}/pages" >/dev/null 2>&1; then
   printf 'GitHub Pages already enabled for %s\n' "$REPO_JSON"
   gh api "repos/${REPO_JSON}/pages" --jq '{html_url, source, status, build_type}'
