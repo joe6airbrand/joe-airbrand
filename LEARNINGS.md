@@ -15,4 +15,12 @@ This file captures **generalizable learnings** about how the project owner steer
 - Scope: … (e.g. all UI / TypeScript only / process)
 -->
 
-_(No entries yet. Append below as patterns emerge.)_
+### 2026-05-07 — Agent terminal permissions
+- **Learning:** Reduce repeated permission prompts: prefer **`required_permissions: ["all"]`** on integrated terminal/shell tool calls when the command needs broad access (network, git, system paths, etc.), instead of splitting across narrower permission classes. For **Cursor IDE** itself, the user prefers configuring **Agents → Auto-run** (e.g. **Run Everything**) and/or **`~/.cursor/permissions.json`** per [permissions.json reference](https://cursor.com/docs/reference/permissions)—the agent cannot disable IDE approval UI from chat.
+- **Scope:** Process / Cursor agent usage
+
+<!-- Template:
+### YYYY-MM-DD — short title
+- Learning: …
+- Scope: … (e.g. all UI / TypeScript only / process)
+-->
