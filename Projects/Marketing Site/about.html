@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Rembrand</title>
+  <meta name="description" content="Rembrand is the platform for AI-native advertising — embedding brands directly into the content people choose to watch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/psc7vjb.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="hero-variant-2">
+  <!-- Thin top bar (hidden in v2 via CSS, kept for parity with index-hero-v2) -->
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <!-- ============== HEADER (Hero v2 — split nav + centered pill logo) ============== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="logo-img logo-img-default" />
+        <img src="images/logo-white.svg" alt="" class="logo-img logo-img-pill" aria-hidden="true" />
+      </a>
+
+      <div class="header-collapse">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul class="nav-cluster nav-cluster-left">
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger" data-menu="advertisers" aria-haspopup="true" aria-expanded="false" data-stagger-text>Advertisers</button>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#publishers" data-stagger-text>Publishers</a>
+            </li>
+          </ul>
+          <div class="nav-logo-slot" aria-hidden="true"></div>
+          <ul class="nav-cluster nav-cluster-right">
+            <li class="nav-item">
+              <a href="index.html#platform" data-stagger-text>Platform</a>
+            </li>
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger" data-menu="resources" aria-haspopup="true" aria-expanded="false" data-stagger-text>Resources</button>
+            </li>
+          </ul>
+
+          <div class="nav-dropdown" data-nav-dropdown aria-hidden="true">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-panel" data-panel="advertisers">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Formats</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="#">
+                          <span class="nav-mega-title">In-Content Ads</span>
+                          <span class="nav-mega-sub">Brand placements inside existing video</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="social-content-ads.html">
+                          <span class="nav-mega-title">Social Content Ads</span>
+                          <span class="nav-mega-sub">Social posts on every screen</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Get started</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="contact.html">
+                          <span class="nav-mega-title">Talk to sales</span>
+                          <span class="nav-mega-sub">Get a tailored walkthrough</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="ica-gallery.html">
+                          <span class="nav-mega-title">See examples</span>
+                          <span class="nav-mega-sub">Live placements in the wild</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-dropdown-panel" data-panel="resources">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Learn</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="#blog">
+                          <span class="nav-mega-title">Blog</span>
+                          <span class="nav-mega-sub">News and announcements</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#case-studies">
+                          <span class="nav-mega-title">Case Studies</span>
+                          <span class="nav-mega-sub">How brands work with Rembrand</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#vision">
+                          <span class="nav-mega-title">Vision</span>
+                          <span class="nav-mega-sub">Where ads are headed</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Company</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="about.html">
+                          <span class="nav-mega-title">About</span>
+                          <span class="nav-mega-sub">Our team and story</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#careers">
+                          <span class="nav-mega-title">Careers</span>
+                          <span class="nav-mega-sub">Open roles</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="ica-gallery.html">
+                          <span class="nav-mega-title">Creative Gallery</span>
+                          <span class="nav-mega-sub">Work made with Rembrand</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#login" class="btn btn-ghost" data-stagger-text>Log in</a>
+          <a href="contact.html" class="btn btn-primary" data-stagger-text>Contact us</a>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============== HERO ============== -->
+    <!-- Mirrors Runway's about hero: full-width framed image, dark overlay,
+         headline + CTA anchored to the bottom-center of the frame. -->
+    <section class="about-hero">
+      <div class="about-hero-media" aria-hidden="true">
+        <!-- autoplay needs muted (browser policy). playsinline keeps the
+             video inline on iOS instead of fullscreening on tap. The
+             still image is set as the poster so the frame is filled
+             instantly while the mp4 streams in (and as a fallback if
+             autoplay is blocked). -->
+        <video
+          class="about-hero-img"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="images/about-hero-nike-billboard.png"
+        >
+          <source src="videos/about-hero.mp4" type="video/mp4" />
+        </video>
+        <div class="about-hero-overlay"></div>
+      </div>
+      <div class="about-hero-inner">
+        <h1 class="about-hero-title">
+          AI that transforms how brands<br class="br-desktop" />
+          become part of the content people love.
+        </h1>
+        <div class="about-hero-actions">
+          <a href="#careers" class="btn btn-soft" data-stagger-text>View Careers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== INTRO PARAGRAPH ============== -->
+    <!-- Narrow column of body copy, like Runway's "We believe..." block -->
+    <section class="about-intro">
+      <div class="container">
+        <p class="about-intro-text">
+          For decades, advertising and content have existed in opposition — interrupting
+          each other and competing for the same attention. That separation is ending.
+          AI now makes it possible for brands to live inside the stories, shows, and
+          social moments people actually choose to watch — not beside them, not before
+          them, but woven into them.
+        </p>
+        <p class="about-intro-text">
+          Rembrand is the platform built for this shift. Our in-content formats embed
+          brands directly into the viewing experience, seen without being intrusive.
+          Our social content ads take what already works — authentic, engaging social
+          experiences — and integrate them seamlessly into the programmatic ad tech
+          stack, extending them across every screen, every network, every moment.
+        </p>
+        <p class="about-intro-text">
+          Seen by viewers as content rather than advertising, at the same frequency,
+          cadence, quality and consistency they've come to expect on social — now
+          available everywhere. The result isn't advertising that tries harder. It's
+          advertising that finally meets consumers where they already are.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== FEATURE VIDEO ============== -->
+    <!-- 16:9 framed image with bottom-left title + play icon overlay,
+         like Runway's "Introducing GWM-1" card. -->
+    <section class="about-feature">
+      <div class="container">
+        <a href="#" class="about-feature-card" aria-label="Watch: Introducing Cinematic Precision Technology">
+          <!-- Autoplay preview reel of CPT in action. Click leads to a
+               fuller story page (the play icon signals "click for the
+               full version" rather than "click to start"). The PNG is
+               kept as the poster so the frame is filled instantly while
+               the mp4 streams in. -->
+          <video
+            class="about-feature-img"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="images/cinematic-precision-technology.png"
+          >
+            <source src="videos/cpt-coors-demo.mp4" type="video/mp4" />
+          </video>
+          <div class="about-feature-overlay" aria-hidden="true"></div>
+          <div class="about-feature-label">
+            <svg class="about-feature-play" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6.83496 0.00878906C10.2691 0.183123 13 3.02347 13 6.50098L12.9912 6.83496C12.8169 10.2688 9.97803 12.9995 6.50098 13L6.16504 12.9912C2.84181 12.8225 0.177491 10.1582 0.00878906 6.83496L0 6.50098C0 2.91113 2.91113 0 6.50098 0L6.83496 0.00878906ZM6.50098 0.911133C3.41451 0.911133 0.911133 3.41451 0.911133 6.50098C0.911661 9.58699 3.41484 12.0889 6.50098 12.0889C9.58667 12.0883 12.0883 9.58667 12.0889 6.50098C12.0889 3.41484 9.58699 0.911661 6.50098 0.911133ZM9.41406 6.3877L5.21191 8.81445V3.96094L9.41406 6.3877Z" fill="white"></path>
+            </svg>
+            <span class="about-feature-title">Introducing Cinematic Precision Technology&trade;</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============== LOCATIONS HEADLINE ============== -->
+    <section class="about-locations">
+      <div class="container">
+        <h2 class="about-locations-title">
+          Headquartered in San Francisco, with team members<br class="br-desktop" />
+          working remotely from all over the world.
+        </h2>
+      </div>
+    </section>
+
+    <!-- ============== PHOTO GALLERY (horizontal scroll) ============== -->
+    <section class="about-gallery">
+      <div class="about-gallery-track">
+        <div class="about-gallery-item"><img src="images/in-content-advertising.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/ai-video-platform.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/social-content-ads.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/virtual-content-studios.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/in-content-advertising2.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/virtual-content-studios2.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/social-and-creator-content-ads-wide.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/cinematic-precision-technology.png" alt="" /></div>
+        <div class="about-gallery-item"><img src="images/the-art-of-reinforcement-learning.png" alt="" /></div>
+      </div>
+    </section>
+
+    <!-- ============== OPEN ROLES ============== -->
+    <section class="about-roles">
+      <div class="container">
+        <div class="about-roles-inner">
+          <h2 class="about-roles-title">Open Roles</h2>
+          <div class="about-roles-list">
+            <p class="about-roles-empty">No open roles at the moment — check back soon.</p>
+            <div class="about-roles-fade" aria-hidden="true"></div>
+          </div>
+          <div class="about-roles-cta">
+            <a href="#careers" class="btn btn-ghost" data-stagger-text>View all openings</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== RESEARCH (dark 3-card grid) ============== -->
+    <section class="about-research">
+      <div class="container">
+        <div class="about-research-head">
+          <p class="eyebrow eyebrow-light">Our Research</p>
+          <h2 class="about-research-title">
+            We are pioneering the AI models that make brand placement
+            indistinguishable from the content itself.
+          </h2>
+          <a href="#research" class="btn btn-stroke-light" data-stagger-text>Read more</a>
+        </div>
+        <div class="about-research-grid">
+          <a class="about-research-card" href="#" aria-label="Learn more about Cinematic Precision Technology">
+            <div class="about-research-thumb">
+              <img src="images/cinematic-precision-technology.png" alt="" />
+              <span class="about-research-overlay" aria-hidden="true">
+                <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+              </span>
+            </div>
+            <div class="about-research-card-title">Introducing Cinematic Precision Technology</div>
+            <div class="about-research-meta">
+              <span>Research</span>
+              <span class="about-research-meta-sep">/</span>
+              <span>March 12, 2026</span>
+            </div>
+          </a>
+          <a class="about-research-card" href="#" aria-label="Learn more about The Art of Reinforcement Learning">
+            <div class="about-research-thumb">
+              <img src="images/the-art-of-reinforcement-learning.png" alt="" />
+              <span class="about-research-overlay" aria-hidden="true">
+                <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+              </span>
+            </div>
+            <div class="about-research-card-title">The Art of Reinforcement Learning</div>
+            <div class="about-research-meta">
+              <span>Research</span>
+              <span class="about-research-meta-sep">/</span>
+              <span>January 28, 2026</span>
+            </div>
+          </a>
+          <a class="about-research-card" href="#" aria-label="Learn more about Social and Creator Content Ads">
+            <div class="about-research-thumb">
+              <img src="images/social-and-creator-content-ads-wide.png" alt="" />
+              <span class="about-research-overlay" aria-hidden="true">
+                <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+              </span>
+            </div>
+            <div class="about-research-card-title">Social and Creator Content Ads</div>
+            <div class="about-research-meta">
+              <span>Research</span>
+              <span class="about-research-meta-sep">/</span>
+              <span>November 4, 2025</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slim footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-brand" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="footer-brand-img" />
+      </a>
+      <p class="footer-copy">&copy; 2026 Rembrand, Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#" data-stagger-text>Privacy</a>
+        <a href="#" data-stagger-text>Terms</a>
+        <a href="contact.html" data-stagger-text>Contact</a>
+      </div>
+      <!-- Replace href="#" with real account URLs once they exist. -->
+      <nav class="footer-social" aria-label="Social media">
+        <a href="#" data-stagger-text rel="noopener" target="_blank">LinkedIn</a>
+        <a href="#" data-stagger-text rel="noopener" target="_blank">Instagram</a>
+        <a href="#" data-stagger-text rel="noopener" target="_blank">X</a>
+        <a href="#" data-stagger-text rel="noopener" target="_blank">Facebook</a>
+        <a href="#" data-stagger-text rel="noopener" target="_blank">TikTok</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

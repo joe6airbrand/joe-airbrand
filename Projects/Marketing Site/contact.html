@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Sales — Rembrand</title>
+  <meta name="description" content="Get in touch with the Rembrand team to bring your brand into the content with custom in-content advertising at scale." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Free fallback while testing: Hanken Grotesk is the closest Google Font to Halyard Display -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Halyard Display via Adobe Fonts kit -->
+  <link rel="stylesheet" href="https://use.typekit.net/psc7vjb.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Thin top bar -->
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <!-- ============== HEADER ============== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="logo-img" />
+      </a>
+
+      <div class="header-collapse">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger" data-menu="advertisers" aria-haspopup="true" aria-expanded="false" data-stagger-text>Advertisers</button>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#publishers" data-stagger-text>Publishers</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#platform" data-stagger-text>Platform</a>
+            </li>
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger" data-menu="resources" aria-haspopup="true" aria-expanded="false" data-stagger-text>Resources</button>
+            </li>
+          </ul>
+
+          <!-- Shared dropdown panel; JS swaps active panel and animates size -->
+          <div class="nav-dropdown" data-nav-dropdown aria-hidden="true">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-panel" data-panel="advertisers">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Formats</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="index.html#advertisers">
+                          <span class="nav-mega-title">In-Content Ads</span>
+                          <span class="nav-mega-sub">Brand placements inside existing video</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="social-content-ads.html">
+                          <span class="nav-mega-title">Social Content Ads</span>
+                          <span class="nav-mega-sub">Social posts on every screen</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Get started</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="contact.html">
+                          <span class="nav-mega-title">Talk to sales</span>
+                          <span class="nav-mega-sub">Get a tailored walkthrough</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="nav-mega-title">See examples</span>
+                          <span class="nav-mega-sub">Live placements in the wild</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-dropdown-panel" data-panel="resources">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Learn</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="index.html#blog">
+                          <span class="nav-mega-title">Blog</span>
+                          <span class="nav-mega-sub">News and announcements</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#case-studies">
+                          <span class="nav-mega-title">Case Studies</span>
+                          <span class="nav-mega-sub">How brands work with Rembrand</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#vision">
+                          <span class="nav-mega-title">Vision</span>
+                          <span class="nav-mega-sub">Where ads are headed</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Company</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="about.html">
+                          <span class="nav-mega-title">About</span>
+                          <span class="nav-mega-sub">Our team and story</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#careers">
+                          <span class="nav-mega-title">Careers</span>
+                          <span class="nav-mega-sub">Open roles</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#creative-gallery">
+                          <span class="nav-mega-title">Creative Gallery</span>
+                          <span class="nav-mega-sub">Work made with Rembrand</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#login" class="btn btn-ghost" data-stagger-text>Log in</a>
+          <a href="contact.html" class="btn btn-primary" data-stagger-text>Contact us</a>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============== CONTACT PAGE ============== -->
+  <main class="contact-main">
+    <!-- Left sidebar: brand pitch + social proof -->
+    <aside class="contact-sidebar" aria-labelledby="contact-headline">
+      <div class="contact-sidebar-grain" aria-hidden="true"></div>
+      <div class="contact-sidebar-inner">
+        <h1 class="contact-headline" id="contact-headline">
+          Seamlessly blending<br />brands and content.
+        </h1>
+        <p class="contact-lede">
+          Talk to our team about launching In-Content Ads and Social Content Ads
+          for your next campaign.
+        </p>
+
+        <div class="contact-trust">
+          <p class="contact-trust-label">Trusted by leading brands</p>
+          <div class="contact-trust-logos">
+            <img class="partner-logo partner-logo-light" src="images/clients/always.svg" alt="Always" />
+            <img class="partner-logo partner-logo-light" src="images/clients/pinterest.svg" alt="Pinterest" />
+            <img class="partner-logo partner-logo-light" src="images/clients/garnier.svg" alt="Garnier" />
+            <img class="partner-logo partner-logo-light" src="images/clients/prime-video.svg" alt="Prime Video" />
+            <img class="partner-logo partner-logo-light" src="images/clients/harrys.svg" alt="Harry's" />
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right side: form -->
+    <section class="contact-form-section" aria-labelledby="contact-form-title">
+      <div class="contact-form-wrap">
+        <div class="contact-form-card" data-contact-state="form">
+          <h2 class="contact-form-title" id="contact-form-title">Contact sales</h2>
+          <p class="contact-form-sub">Tell us a bit about your company and we'll be in touch.</p>
+
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="form-field">
+              <label for="company">Company Name</label>
+              <input id="company" name="company" type="text" placeholder="Acme Inc." autocomplete="organization" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Business Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+            </div>
+
+            <div class="form-field">
+              <label for="country">Country</label>
+              <select id="country" name="country" autocomplete="country-name" required>
+                <option value="" disabled selected>Select a country</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+                <option>Australia</option>
+                <option>Germany</option>
+                <option>France</option>
+                <option>Spain</option>
+                <option>Italy</option>
+                <option>Netherlands</option>
+                <option>Sweden</option>
+                <option>Norway</option>
+                <option>Denmark</option>
+                <option>Finland</option>
+                <option>Ireland</option>
+                <option>Belgium</option>
+                <option>Switzerland</option>
+                <option>Austria</option>
+                <option>Portugal</option>
+                <option>Poland</option>
+                <option>Czech Republic</option>
+                <option>Greece</option>
+                <option>Romania</option>
+                <option>Hungary</option>
+                <option>Brazil</option>
+                <option>Mexico</option>
+                <option>Argentina</option>
+                <option>Chile</option>
+                <option>Colombia</option>
+                <option>Peru</option>
+                <option>Japan</option>
+                <option>South Korea</option>
+                <option>China</option>
+                <option>Hong Kong</option>
+                <option>Taiwan</option>
+                <option>Singapore</option>
+                <option>India</option>
+                <option>Indonesia</option>
+                <option>Malaysia</option>
+                <option>Thailand</option>
+                <option>Philippines</option>
+                <option>Vietnam</option>
+                <option>New Zealand</option>
+                <option>South Africa</option>
+                <option>Nigeria</option>
+                <option>Kenya</option>
+                <option>Egypt</option>
+                <option>Israel</option>
+                <option>United Arab Emirates</option>
+                <option>Saudi Arabia</option>
+                <option>Turkey</option>
+                <option>Russia</option>
+                <option>Ukraine</option>
+                <option disabled>──────────</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary contact-submit" data-stagger-text>Contact sales</button>
+
+            <p class="contact-form-fineprint">
+              By submitting, you'll be redirected to your email client with a pre-filled
+              message. We'll respond within one business day.
+            </p>
+          </form>
+        </div>
+
+        <!-- Success state (hidden by default; revealed by JS) -->
+        <div class="contact-form-card contact-form-success" data-contact-success hidden>
+          <div class="contact-success-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 16L14 20L22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="contact-form-title">Thanks for reaching out</h2>
+          <p class="contact-form-sub">
+            Your email client should have opened with a pre-filled message.
+            If it didn't, write to us directly at
+            <a href="mailto:sales@rembrand.com">sales@rembrand.com</a>.
+          </p>
+          <button type="button" class="btn btn-ghost" data-contact-reset>Send another</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slim footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-brand" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="footer-brand-img" />
+      </a>
+      <p class="footer-copy">&copy; 2026 Rembrand, Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dev-only: font switcher. Choice persists via localStorage. Delete
+       this whole block (and the corresponding CSS / JS) before launch. -->
+  <div class="font-switcher" data-font-switcher>
+    <button type="button" class="font-switcher-btn is-active" data-font="default">Halyard</button>
+    <button type="button" class="font-switcher-btn" data-font="montserrat">Montserrat</button>
+    <button type="button" class="font-switcher-btn" data-font="helvetica">Helvetica</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

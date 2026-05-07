@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rembrand — Ads That Become One with the Content.</title>
+  <meta name="description" content="Rembrand embeds your brand directly into existing video — and transforms TV, Social, and Creator Content into consumer action." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Free fallback while testing: Hanken Grotesk is the closest Google Font to Halyard Display -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Halyard Display: paste your Adobe Fonts kit URL here once you have one
+       Example: <link rel="stylesheet" href="https://use.typekit.net/XXXXXXX.css" /> -->
+  <link rel="stylesheet" href="https://use.typekit.net/psc7vjb.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Thin top bar -->
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <!-- ============== HEADER ============== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="logo-img" />
+      </a>
+
+      <div class="header-collapse">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger" data-menu="advertisers" aria-haspopup="true" aria-expanded="false" data-stagger-text>Advertisers</button>
+            </li>
+            <li class="nav-item">
+              <a href="#publishers" data-stagger-text>Publishers</a>
+            </li>
+            <li class="nav-item">
+              <a href="#platform" data-stagger-text>Platform</a>
+            </li>
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger" data-menu="resources" aria-haspopup="true" aria-expanded="false" data-stagger-text>Resources</button>
+            </li>
+          </ul>
+
+          <!-- Shared dropdown panel; JS swaps active panel and animates size -->
+          <div class="nav-dropdown" data-nav-dropdown aria-hidden="true">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-panel" data-panel="advertisers">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Formats</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="#">
+                          <span class="nav-mega-title">In-Content Ads</span>
+                          <span class="nav-mega-sub">Brand placements inside existing video</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="social-content-ads.html">
+                          <span class="nav-mega-title">Social Content Ads</span>
+                          <span class="nav-mega-sub">Social posts on every screen</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Get started</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="contact.html">
+                          <span class="nav-mega-title">Talk to sales</span>
+                          <span class="nav-mega-sub">Get a tailored walkthrough</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="nav-mega-title">See examples</span>
+                          <span class="nav-mega-sub">Live placements in the wild</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-dropdown-panel" data-panel="resources">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Learn</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="#blog">
+                          <span class="nav-mega-title">Blog</span>
+                          <span class="nav-mega-sub">News and announcements</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#case-studies">
+                          <span class="nav-mega-title">Case Studies</span>
+                          <span class="nav-mega-sub">How brands work with Rembrand</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#vision">
+                          <span class="nav-mega-title">Vision</span>
+                          <span class="nav-mega-sub">Where ads are headed</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Company</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="about.html">
+                          <span class="nav-mega-title">About</span>
+                          <span class="nav-mega-sub">Our team and story</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#careers">
+                          <span class="nav-mega-title">Careers</span>
+                          <span class="nav-mega-sub">Open roles</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#creative-gallery">
+                          <span class="nav-mega-title">Creative Gallery</span>
+                          <span class="nav-mega-sub">Work made with Rembrand</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#login" class="btn btn-ghost" data-stagger-text>Log in</a>
+          <a href="contact.html" class="btn btn-primary" data-stagger-text>Contact us</a>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-inner">
+        <h1 class="hero-title">Ads That Become One<br />with the Content.</h1>
+        <p class="hero-sub">
+          Rembrand embeds your brand directly into existing video<br class="br-desktop" />
+          — and transforms TV, Social, and Creator Content into consumer action.
+        </p>
+        <div class="hero-actions">
+          <a href="#demo" class="btn btn-primary" data-stagger-text>See it in Action</a>
+          <a href="#publishers" class="btn btn-soft" data-stagger-text>Publishers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PARTNERS ============== -->
+    <section class="partners">
+      <div class="container">
+        <p class="partners-text">We partner with the best in the world</p>
+        <div class="partners-row">
+          <div class="partners-track">
+            <img class="partner-logo" src="images/clients/always.svg" alt="Always" />
+            <img class="partner-logo" src="images/clients/pinterest.svg" alt="Pinterest" />
+            <img class="partner-logo" src="images/clients/garnier.svg" alt="Garnier" />
+            <img class="partner-logo" src="images/clients/prime-video.svg" alt="Prime Video" />
+            <img class="partner-logo" src="images/clients/harrys.svg" alt="Harry's" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== MISSION STATEMENT ============== -->
+    <section class="mission">
+      <div class="container">
+        <p class="mission-text">
+          AI is blurring the lines between advertising and content,<br />
+          forever transforming how the brands we love become part of the stories that matter.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== 4-CARD GRID ============== -->
+    <section class="capabilities">
+      <div class="container">
+        <div class="cap-grid">
+          <article class="cap-card">
+            <a href="#" class="cap-media cap-media-1" aria-label="Learn more about In-Content Advertising">
+              <span class="cap-media-overlay" aria-hidden="true">
+                <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+              </span>
+            </a>
+            <p class="cap-lede">Your Brand, In the Content</p>
+            <h3>In-Content Advertising</h3>
+            <p class="cap-body">
+              Two formats — VOOH and VPP — built into the viewing experience,
+              not interrupting it. Seen, not skipped. And proven to lift every
+              other ad in your campaign.
+            </p>
+            <a href="#" class="btn btn-dark btn-sm" data-stagger-text>Learn More</a>
+          </article>
+
+          <article class="cap-card">
+            <a href="#" class="cap-media cap-media-2" aria-label="Learn more about AI Video Platform">
+              <span class="cap-media-overlay" aria-hidden="true">
+                <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+              </span>
+            </a>
+            <p class="cap-lede">Powering Every Placement</p>
+            <h3>AI Video Platform</h3>
+            <p class="cap-body">
+              A publisher-first platform that identifies placement
+              opportunities, optimizes scenes, manages inventory and
+              delivers final creative — end to end, through one AI studio.
+            </p>
+            <a href="#" class="btn btn-dark btn-sm" data-stagger-text>Learn More</a>
+          </article>
+
+          <article class="cap-card">
+            <a href="social-content-ads.html" class="cap-media cap-media-3" aria-label="Learn more about Social Content Ads">
+              <span class="cap-media-overlay" aria-hidden="true">
+                <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+              </span>
+            </a>
+            <p class="cap-lede">Social Content That Travels</p>
+            <h3>Social Content Ads</h3>
+            <p class="cap-body">
+              Authentic social posts programmatically distributed across
+              streaming, CTV and the open web — transforming your best
+              social content into ads that work everywhere, in seconds.
+            </p>
+            <a href="social-content-ads.html" class="btn btn-dark btn-sm" data-stagger-text>Learn More</a>
+          </article>
+
+          <article class="cap-card">
+            <a href="#" class="cap-media cap-media-4" aria-label="Learn more about Virtual Content Studios">
+              <span class="cap-media-overlay" aria-hidden="true">
+                <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+              </span>
+            </a>
+            <p class="cap-lede">Production at Scale</p>
+            <h3>Virtual Content Studios</h3>
+            <p class="cap-body">
+              Precision at Every Pixel. Global physical studios meet
+              AI-driven workflows. Real-world capture, virtually placed —
+              at the quality and speed modern content demands.
+            </p>
+            <a href="#" class="btn btn-dark btn-sm" data-stagger-text>Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== LATEST FROM REMBRAND ============== -->
+    <section class="latest">
+      <div class="container">
+        <h2 class="latest-title">The latest from Rembrand</h2>
+
+        <article class="latest-row">
+          <a href="#" class="latest-thumb latest-thumb-1" aria-label="Learn more about Cinematic Precision Technology">
+            <span class="latest-thumb-overlay" aria-hidden="true">
+              <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+            </span>
+          </a>
+          <div class="latest-text">
+            <h3>Introducing Cinematic Precision Technology&trade;</h3>
+            <p>
+              CPT-1.2 upgrades leading video models with proprietary
+              intelligence, delivering sub-pixel 4K accuracy, so that your
+              brand appears naturally, consistently, and seamlessly in
+              every frame.
+            </p>
+            <a href="#" class="btn btn-dark btn-sm" data-stagger-text>Learn More</a>
+          </div>
+        </article>
+
+        <article class="latest-row">
+          <a href="#" class="latest-thumb latest-thumb-2" aria-label="Learn more about The Art of Reinforcement Learning">
+            <span class="latest-thumb-overlay" aria-hidden="true">
+              <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+            </span>
+          </a>
+          <div class="latest-text">
+            <h3>The Art of Reinforcement Learning</h3>
+            <p>
+              Every frame evaluated, every placement refined. Reinforcement learning continuously trains the intelligence behind CPT, so each iteration raises the standard for what seamless looks like.
+            </p>
+            <a href="#" class="btn btn-dark btn-sm" data-stagger-text>Learn More</a>
+          </div>
+        </article>
+
+        <article class="latest-row">
+          <a href="#" class="latest-thumb latest-thumb-3" aria-label="Learn more about Social and Creator Content Ads">
+            <span class="latest-thumb-overlay" aria-hidden="true">
+              <span class="btn btn-stroke-light" data-stagger-text>Learn More</span>
+            </span>
+          </a>
+          <div class="latest-text">
+            <h3>Social and Creator Content Ads</h3>
+            <p>
+              Your best social content, transformed into ads that travel —
+              programmatically distributed across streaming, CTV, and the
+              open web. And for creators, a new way for your voice and
+              presence to reach audiences at a scale that wasn't possible
+              before.
+            </p>
+            <a href="#" class="btn btn-dark btn-sm" data-stagger-text>Learn More</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============== REMBRAND RESEARCH ============== -->
+    <section class="research">
+      <div class="research-inner container">
+        <div class="research-copy">
+          <p class="eyebrow eyebrow-light">Rembrand Research</p>
+          <p class="research-text">
+            A 1B parameter base model, enhanced by CPT-1.2, trained on over
+            100M+ unique proprietary data points to deliver unrivaled high
+            fidelity brand placement across every format and screen.
+          </p>
+          <a href="#" class="btn btn-primary" data-stagger-text>Learn More</a>
+        </div>
+        <ul class="research-links">
+          <li><a href="#model"><span data-stagger-text>Model &amp; Data</span><span class="arrow">→</span></a></li>
+          <li><a href="#modifier"><span data-stagger-text>Reinforcement &amp; Learning</span><span class="arrow">→</span></a></li>
+          <li><a href="#agents"><span data-stagger-text>Agentic Actions &amp; Discovery</span><span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slim footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-brand" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="footer-brand-img" />
+      </a>
+      <p class="footer-copy">&copy; 2026 Rembrand, Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dev-only: hero variant switcher. Delete this <a> tag (and its
+       counterpart on index-hero-v2.html) before launching the site. -->
+  <a href="index-hero-v2.html" class="hero-switcher" aria-label="Switch to hero v2">
+    <span class="hero-switcher-current">Hero v1</span>
+    <span class="hero-switcher-sep">→</span>
+    <span class="hero-switcher-next">v2</span>
+  </a>
+
+  <!-- Dev-only: font switcher. Choice persists via localStorage. Delete
+       this whole block (and the corresponding CSS / JS) before launch. -->
+  <div class="font-switcher" data-font-switcher>
+    <button type="button" class="font-switcher-btn is-active" data-font="default">Halyard</button>
+    <button type="button" class="font-switcher-btn" data-font="montserrat">Montserrat</button>
+    <button type="button" class="font-switcher-btn" data-font="helvetica">Helvetica</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

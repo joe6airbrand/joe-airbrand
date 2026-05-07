@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rembrand — Style Reference</title>
+<meta name="description" content="A single-page visual reference for the Rembrand marketing site design system: colors, typography, buttons, cards, gradients, radii, shadows." />
+<!-- Self-contained: only the brand fonts are loaded externally so type
+     samples render in Halyard Display when online. The page falls back
+     to Hanken Grotesk → Inter → system sans cleanly when offline. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.typekit.net/psc7vjb.css" />
+<style>
+  /* ============== Design tokens (mirrors styles.css) ============== */
+  :root {
+    --purple: #6b46c1;
+    --purple-600: #5b3bb0;
+    --purple-700: #4b2f95;
+    --purple-deep: #2a1a52;
+    --purple-darker: #1a0b2e;
+
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --bg-grey: #f4f4f6;
+    --text: #1f1f1f;
+    --text-2: #2f2f33;
+    --text-muted: #6b7280;
+    --text-soft: #8a8a93;
+    --border: #e6e6ea;
+    --border-soft: #f0f0f3;
+
+    --font-sans: "halyard-display", "Hanken Grotesk", "Inter",
+                 -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Helvetica, Arial, sans-serif;
+
+    --container: 1180px;
+    --gutter: 24px;
+    --radius: 12px;
+    --radius-media: 12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scrollbar-gutter: stable; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img, svg, video { display: block; max-width: 100%; }
+  ul, ol { list-style: none; margin: 0; padding: 0; }
+  h1, h2, h3, h4, p { margin: 0; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--bg-grey);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--text);
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* ============== Reference page layout ============== */
+  .ref-top {
+    background: linear-gradient(180deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 90%, #6b46c1 100%);
+    color: #fff;
+    padding: 64px 0 48px;
+  }
+  .ref-top .container { display: flex; flex-direction: column; gap: 24px; }
+  .ref-top-logos { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+  .ref-logo-mark {
+    height: 22px;
+    color: #fff;
+  }
+  .ref-logo-mark svg { height: 100%; width: auto; display: block; }
+  .ref-meta { font-size: 13px; color: rgba(255,255,255,0.7); }
+  .ref-title {
+    font-size: clamp(36px, 5.4vw, 56px);
+    font-weight: 400;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    max-width: 24ch;
+  }
+  .ref-lead {
+    font-size: 17px;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.88);
+    max-width: 60ch;
+  }
+
+  .ref-section {
+    padding: 96px 0 0;
+  }
+  .ref-section:last-of-type { padding-bottom: 96px; }
+  .ref-section-head { margin-bottom: 32px; }
+  .ref-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .ref-section-title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--text);
+  }
+  .ref-section-sub {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 60ch;
+  }
+
+  /* ============== Color swatches ============== */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .swatch {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(20, 20, 30, .04);
+    display: flex;
+    flex-direction: column;
+  }
+  .swatch-color {
+    height: 96px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .swatch-meta { padding: 14px 16px 16px; }
+  .swatch-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .swatch-hex { font-size: 12.5px; color: var(--text-muted); display: block; }
+  .swatch-var { font-size: 11.5px; color: var(--text-soft); margin-top: 4px; display: block; }
+  .swatch-role {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--purple);
+    background: rgba(107, 70, 193, 0.08);
+    padding: 4px 8px;
+    border-radius: 999px;
+  }
+
+  /* Show contrast on dark/light swatches */
+  .swatch--dark .swatch-color { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+
+  /* ============== Typography samples ============== */
+  .type-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .type-row:last-child { border-bottom: 0; }
+  .type-spec {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  .type-spec strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 4px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  /* Each size renders with its actual scale and weight */
+  .t-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+  .t-nav {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+  }
+  .t-mega-sub { font-size: 12.5px; font-weight: 400; color: var(--text-muted); line-height: 1.35; }
+  .t-footer  { font-size: 13px; line-height: 1.4; color: var(--text-muted); }
+  .t-card    { font-size: 14px; line-height: 1.45; color: var(--text-muted); }
+  .t-partners{ font-size: 15px; color: var(--text-muted); }
+  .t-body    { font-size: 16px; line-height: 1.4; color: var(--text); }
+  .t-research{ font-size: 17px; line-height: 1.45; color: var(--text-2); }
+  .t-intro   { font-size: 19px; line-height: 1.55; color: var(--text-2); }
+  .t-card-h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--text);
+  }
+  .t-section-title {
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .t-mission {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text-2);
+  }
+  .t-hero-sub {
+    font-size: clamp(15px, 1.4vw, 17px);
+    line-height: 1.45;
+    color: rgba(31, 31, 31, 0.7);
+  }
+  .t-hero-title {
+    font-size: clamp(36px, 5.4vw, 64px);
+    font-weight: 400;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  /* ============== Buttons (mirrors site .btn rules) ============== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    transition: background-color .15s ease, color .15s ease, transform .15s ease, box-shadow .15s ease;
+    white-space: nowrap;
+    border: 0;
+    text-decoration: none;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--purple); color: #fff; }
+  .btn-primary:hover { background: var(--purple-600); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-2);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { background: var(--bg-grey); }
+
+  .btn-soft {
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--text);
+    backdrop-filter: blur(8px);
+  }
+  .btn-soft:hover { background: #fff; }
+
+  .btn-dark { background: #2a2a2e; color: #fff; }
+  .btn-dark:hover { background: #1a1a1e; }
+
+  .btn-stroke-light {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+  .btn-stroke-light:hover {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+
+  .btn-sm { padding: 0 14px; font-size: 13px; }
+
+  /* Demo-only helper: paints a btn the way the .hero-variant-2 overrides
+     paint .btn-ghost / .btn-soft when they sit over hero imagery. There is
+     NO .btn-frosted class in the production CSS — the look is delivered
+     by the v2 hero header overrides on the existing button classes. */
+  .btn-demo-frosted {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+  .btn-demo-frosted:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Button gallery layout */
+  .btn-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .btn-tile {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .btn-tile-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .btn-tile-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .btn-tile-meta { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+
+  /* Frosted variant lives on a dark tile so the recipe reads */
+  .btn-tile--dark {
+    background:
+      radial-gradient(60% 60% at 20% 30%, rgba(140, 90, 220, 0.4), transparent 70%),
+      radial-gradient(50% 60% at 90% 80%, rgba(80, 50, 160, 0.5), transparent 70%),
+      linear-gradient(135deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 100%);
+    border-color: transparent;
+    color: #fff;
+  }
+  .btn-tile--dark .btn-tile-name { color: #fff; }
+  .btn-tile--dark .btn-tile-meta { color: rgba(255,255,255,0.7); }
+
+  /* ============== Cards ============== */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  /* Capability card pattern */
+  .demo-cap-card { display: flex; flex-direction: column; }
+  .demo-cap-card .demo-media {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-media);
+    background: linear-gradient(135deg, #2a1a52, #6b46c1);
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .demo-cap-card .demo-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(60% 60% at 30% 30%, rgba(255,255,255,0.18), transparent 70%);
+  }
+  .demo-cap-card .demo-lede {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .demo-cap-card h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text);
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .demo-cap-card p {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--text-muted);
+    flex: 1;
+  }
+  .demo-cap-card .btn { align-self: flex-start; margin-top: 32px; }
+
+  /* Latest row pattern — matches production exactly: no border, no
+     padding, no card surface. It's just a grid with image + text. */
+  .demo-latest-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  @media (max-width: 720px) { .demo-latest-row { grid-template-columns: 1fr; } }
+  .demo-latest-thumb {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-media);
+    background: linear-gradient(135deg, #1a0b2e, #4b2f95 60%, #6b46c1);
+    position: relative;
+    overflow: hidden;
+  }
+  .demo-latest-thumb::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(40% 50% at 30% 35%, rgba(255,255,255,0.22), transparent 70%),
+      radial-gradient(50% 50% at 70% 70%, rgba(140, 90, 220, 0.35), transparent 70%);
+  }
+  .demo-latest-text { display: flex; flex-direction: column; }
+  .demo-latest-text h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text);
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .demo-latest-text p { font-size: 14px; line-height: 1.45; color: var(--text-muted); }
+  .demo-latest-text .btn { align-self: flex-start; margin-top: 24px; }
+
+  /* Research card pattern (dark) */
+  .demo-research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    background:
+      radial-gradient(60% 60% at 20% 30%, rgba(140, 90, 220, 0.4), transparent 70%),
+      radial-gradient(50% 60% at 90% 80%, rgba(80, 50, 160, 0.5), transparent 70%),
+      linear-gradient(135deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 100%);
+    color: #fff;
+    border-radius: var(--radius-media);
+    padding: 40px 32px;
+  }
+  @media (max-width: 900px) { .demo-research-grid { grid-template-columns: 1fr; } }
+  .demo-research-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #fff;
+  }
+  .demo-research-thumb {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-media);
+    background:
+      radial-gradient(40% 60% at 30% 40%, rgba(255,255,255,0.22), transparent 70%),
+      linear-gradient(135deg, #2a1a52 0%, #6b46c1 100%);
+    margin-bottom: 14px;
+  }
+  .demo-research-card-title {
+    font-size: 22px; line-height: 1.15; letter-spacing: -0.015em;
+    font-weight: 400; margin-bottom: 6px;
+  }
+  .demo-research-meta {
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    display: flex; gap: 6px; align-items: center;
+  }
+
+  /* Feature video card pattern */
+  .demo-feature-card {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-media);
+    overflow: hidden;
+    background:
+      radial-gradient(40% 60% at 60% 50%, rgba(140, 90, 220, 0.45), transparent 70%),
+      linear-gradient(135deg, #1a0b2e 0%, #4b2f95 60%, #2a1a52 100%);
+  }
+  .demo-feature-card::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.45) 100%);
+  }
+  .demo-feature-label {
+    position: absolute;
+    left: 24px; bottom: 22px;
+    display: flex; align-items: center; gap: 12px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+  .demo-feature-play {
+    width: 24px; height: 24px;
+  }
+  .demo-feature-title {
+    font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 400; letter-spacing: -0.02em; line-height: 1.1;
+  }
+
+  /* ============== Gradient strip ============== */
+  .grad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .grad-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+  }
+  .grad-swatch { height: 120px; }
+  .grad-meta { padding: 14px 16px 16px; }
+  .grad-name { font-size: 14px; font-weight: 500; margin-bottom: 6px; color: var(--text); }
+  .grad-detail { font-size: 12px; color: var(--text-muted); line-height: 1.5; word-break: break-word; }
+
+  .grad-top-bar { background: linear-gradient(90deg, #1a0b2e 0%, #2a1a52 50%, #1a0b2e 100%); }
+  .grad-hero-fallback { background: linear-gradient(180deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 90%, #6b46c1 100%); }
+  .grad-research {
+    background:
+      radial-gradient(60% 60% at 20% 30%, rgba(140, 90, 220, 0.4), transparent 70%),
+      radial-gradient(50% 60% at 90% 80%, rgba(80, 50, 160, 0.5), transparent 70%),
+      linear-gradient(135deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 100%);
+  }
+  .grad-overlay {
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1520975916090-3105956dac38?w=600&auto=format&fit=crop") center/cover;
+  }
+  .grad-overlay::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 85% 85% at center, transparent 25%, rgba(0,0,0,0.75) 100%),
+      radial-gradient(ellipse 60% 35% at 50% 32%, rgba(0,0,0,0.3), transparent 70%);
+  }
+
+  /* ============== Radius scale ============== */
+  .radius-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  .radius-tile {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 18px;
+    text-align: center;
+  }
+  .radius-tile .swatch-color {
+    height: 80px;
+    background: linear-gradient(135deg, #6b46c1, #2a1a52);
+    border: 0;
+    margin-bottom: 12px;
+  }
+  .r-8  { border-radius: 8px; }
+  .r-8  .swatch-color { border-radius: 8px; }
+  .r-12 { border-radius: 12px; }
+  .r-12 .swatch-color { border-radius: 12px; }
+  .r-14 { border-radius: 14px; }
+  .r-14 .swatch-color { border-radius: 14px; }
+  .r-16 { border-radius: 16px; }
+  .r-16 .swatch-color { border-radius: 16px; }
+  .r-pill { border-radius: 999px; padding: 12px 24px; }
+  .r-pill .swatch-color { border-radius: 999px; height: 40px; }
+
+  .radius-label { font-size: 13px; font-weight: 500; color: var(--text); }
+  .radius-meta { font-size: 11.5px; color: var(--text-muted); margin-top: 4px; display: block; }
+
+  /* ============== Shadow demo ============== */
+  .shadow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    background: var(--bg-soft);
+    padding: 40px;
+    border-radius: var(--radius);
+  }
+  .shadow-tile {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px;
+    min-height: 96px;
+  }
+  .shadow-tile-name { font-size: 13px; font-weight: 500; margin-bottom: 6px; color: var(--text); }
+  .shadow-tile-meta { font-size: 11.5px; color: var(--text-muted); line-height: 1.5; }
+
+  .sh-tight  { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+  .sh-nav    { box-shadow: 0 1px 2px rgba(20, 20, 30, .06), 0 8px 18px rgba(20, 20, 30, .08), 0 32px 60px rgba(20, 20, 30, .18); }
+  .sh-pill   { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 18px rgba(20, 20, 30, 0.22); }
+  .sh-pill-scrolled { box-shadow: 0 4px 14px rgba(20, 20, 30, 0.18); }
+
+  /* ============== Hero v2 mini reference ============== */
+  .hero-v2 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background:
+      radial-gradient(ellipse 80% 80% at 50% 60%, rgba(0,0,0,0.5), transparent 70%),
+      radial-gradient(60% 60% at 30% 30%, rgba(140, 90, 220, 0.55), transparent 70%),
+      linear-gradient(180deg, #1a0b2e 0%, #2a1a52 45%, #4b2f95 100%);
+    color: #fff;
+    text-align: center;
+    padding: 110px 24px 96px;
+    isolation: isolate;
+  }
+  .hero-v2::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 85% 85% at center, transparent 25%, rgba(0,0,0,0.55) 100%),
+      radial-gradient(ellipse 60% 35% at 50% 32%, rgba(0,0,0,0.3), transparent 70%);
+    pointer-events: none;
+  }
+  /* Mirrors production .hero-variant-2 .header-inner > .logo:
+     14px / 26px padding, fully-rounded, brand gradient + close shadow. */
+  .hero-v2-pill {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    padding: 14px 26px;
+    border-radius: 999px;
+    background:
+      radial-gradient(60% 60% at 20% 30%, rgba(140, 90, 220, 0.4), transparent 70%),
+      radial-gradient(50% 60% at 90% 80%, rgba(80, 50, 160, 0.5), transparent 70%),
+      linear-gradient(135deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 100%);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.5),
+      0 6px 18px rgba(20, 20, 30, 0.22);
+    z-index: 2;
+    line-height: 0; /* tight to the SVG */
+  }
+  /* Match production sizing exactly: 16px tall + 1444.37:182.75 viewBox
+     aspect = ~127px wide. Combined with the 14px/26px padding, the pill
+     is the same ~180px x 44px that ships in index-hero-v2.html. */
+  .hero-v2-pill svg {
+    height: 16px;
+    width: 127px;
+    color: #fff;
+    display: block;
+  }
+  .hero-v2-title {
+    position: relative;
+    font-size: clamp(28px, 4.4vw, 56px);
+    line-height: 1.06;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin: 0 auto 16px;
+    max-width: 18ch;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 2px 24px rgba(0, 0, 0, 0.25);
+  }
+  .hero-v2-sub {
+    position: relative;
+    font-size: clamp(14px, 1.4vw, 17px);
+    line-height: 1.45;
+    color: rgba(255,255,255,0.88);
+    max-width: 56ch;
+    margin: 0 auto 28px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .hero-v2-actions {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-v2-actions .btn { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+
+  /* ============== Footer ============== */
+  .ref-footer {
+    border-top: 1px solid var(--border-soft);
+    margin-top: 96px;
+    padding: 32px 0 40px;
+    color: var(--text-muted);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .ref-footer-mark { color: var(--purple); height: 18px; }
+  .ref-footer-mark svg { height: 100%; }
+
+  /* Logo demo block */
+  .logo-demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 720px) { .logo-demo-grid { grid-template-columns: 1fr; } }
+  .logo-demo-tile {
+    border-radius: var(--radius);
+    padding: 56px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border: 1px solid var(--border);
+  }
+  .logo-demo-tile--light { background: #fff; }
+  .logo-demo-tile--dark {
+    background:
+      radial-gradient(60% 60% at 20% 30%, rgba(140, 90, 220, 0.4), transparent 70%),
+      radial-gradient(50% 60% at 90% 80%, rgba(80, 50, 160, 0.5), transparent 70%),
+      linear-gradient(135deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 100%);
+    border-color: transparent;
+    color: #fff;
+  }
+  .logo-demo-tile svg { height: 28px; width: auto; }
+  .logo-demo-tile--light svg { color: var(--purple); }
+  .logo-demo-tile--dark svg { color: #fff; }
+  .logo-demo-tile-meta { font-size: 13px; color: var(--text-muted); }
+  .logo-demo-tile--dark .logo-demo-tile-meta { color: rgba(255,255,255,0.75); }
+
+</style>
+</head>
+<body>
+
+<!-- ====================================================
+     Reusable inline logo SVG (color: currentColor via fill="currentColor")
+     This is a copy of /images/logo.svg with `fill="#6b46c1"` swapped out
+     for `fill="currentColor"` so we can recolor it via CSS color.
+     ==================================================== -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1444.37 182.75" width="0" height="0" style="position:absolute;left:-9999px" aria-hidden="true">
+  <defs>
+    <symbol id="rembrand-logo" viewBox="0 0 1444.37 182.75">
+      <g fill="currentColor">
+        <g>
+          <g>
+            <path d="M1304.98,182.32c-3.58-3.67-5.99-7.2-4.43-11.1,1.35-3.36,5.66-7.17,10.33-7.29l56.42-1.39c24.86-2.76,49.94-26.19,55.57-50.73,8.78-38.22-10.97-72.96-49-86.01-5.19-.6-10.29-1.11-15.13-3.6l-52.99-.08c-2.51,0-5.47-4.87-5.71-7.19-.3-2.99,1.96-6.4,4.63-9.43l70,.44c31.39,9.16,54.85,30.28,65.45,61.32l2.68,9.68c2.93,10.6.82,22.01.68,32.89-2.17,3.86-2.81,7.45-3.31,11.47-10.39,27.72-30.87,49.29-58.82,58.04-3.47-.58-6.39.12-8.4,2.95l-67.99.03Z"/>
+            <path d="M1319.77,156.64c-3.56,7.08-14.73,4.94-15.76,3.69-1.1-1.34-3.67-4.63-3.67-6.58V35.47c-.01-5.51,6.88-11.47,11.72-10.62,2.46.43,5.59,3.92,7.7,5.96v125.84Z"/>
+          </g>
+          <path d="M1180.26,125.82l-23.56-31.16-13.69-19.21-25.86-33.73-.16,136.53-4.06,4.09-73.41-.14c-3.18,0-5.19-6.56-6.26-9.03l-2.32-5.32-8.72-20.47-10.5-23.36c-.42,4.84-.62,12.82-5.93,12.84l-63.25.22-6.3-8.17-12.34,27.62-8.03,19.6c-1.76,4.3-4.19,6.32-7.92,6.38-4.09.06-8.7.18-9.65-5.11-.56-3.14-.27-8.34.4-11.27l26.63-61.83,20.01-47.77,21.32-51.41c1.04-2.5,5.35-4.67,7.51-5.09,2.34-.45,7.21,2.24,8.39,5l22.62,52.79,27.01,63.87,17.43,41.43,48.4.07V10.46s4.64-5.49,4.64-5.49c.95-1.12,3.93-3.09,5.35-2.76,1.59.37,3.94,1.95,6.3,3.25l29.39,39.16,75.25,101,.08-137.95,9.59-5.97c2.97,2.29,9.38,5.83,9.38,10.17l.03,163.31-4.28,5.85c-1.57,2.15-8.54,2.19-10.7.68-2.71-1.89-6.7-6.52-8.75-9.43l-6.26-8.91-18.79-25.12-9.02-12.41ZM1010.31,121.49c-.54-5.93-1.42-6.49-2.79-9.82l-6.57-15.96-8.89-19.84-12.93-31.93-3.1-9.81-10.77,24.53-3.66,8.36-22.68,54.93,9.59-3.92,53.63.08,8.16,3.38Z"/>
+          <path d="M274.93,100.38l-98.98.03-6.46-8.6c2.05-4.64,3.99-8.22,8.04-10.42l97.43.03c2.44,2.39,6.92,6.01,6.88,9.37-.04,3.6-4.38,7.04-6.91,9.59Z"/>
+          <path d="M277.26,21.98l-103.75.13-3.53-8.32,4.08-8.39,103.92.15c3.31,0,4.29,5.54,4.49,7.83.21,2.48-1.11,8.6-5.2,8.6Z"/>
+          <path d="M477.97,62.23c-2.41,2.22-3.63,6.12-5.16,9.44l-20.68,44.88-6.59,15.56-22.73,48.44c-1.05,2.23-6.84,2.18-9.47,1.82-2.47-.34-5.18-3.42-6.67-6.77l-21.1-47.67-13.37-29.16-6.14-15.17c-3.06-7.57-6.84-14.59-10.98-21.82l-.18,113.33c-1.73,1.62-2.54,3.11-3.06,5.64-4.99,2.89-12.93,3-16.09-3.12V10.11c3.07-5.87,8.61-5.42,15.38-4.12l12.04,25.41,3.35,8.8,27.37,60.6,17.02,38.54c1.45,3.29,3.06,6.24,6.21,9.46l42.85-95.82,21.94-46.92c6.2-1.21,11.83-1.91,15.09,3.42v168.72c-3.36,5.42-10.54,5.18-15.39,2.84-.98-2.39-1.89-3.9-3.49-5.79l-.13-113.05Z"/>
+          <path d="M664.5,118.04c-2.31-4.96-8.3-10-12.31-13.79-2.93-.8-4.72-1.6-6.86-3.84l-63.36.05-.25,56.64c-.02,3.65-6.96,5.23-8.84,4.18-2.55-.03-5.06-.07-6.04-.96-1.13-1.02-2.95-4.23-2.95-6l-.02-120.04c0-5.21,3.96-7.84,7.58-8.84,2.86-.79,10.09,1.18,10.12,4.92l.41,51.07,57.56-.14c8.65-5.04,14.9-8.2,18.96-17.14,1.13-7.17,2.67-16.37-.47-23.47-4.15-9.41-12.79-15.99-23.54-17.42-21.72-2.89-44.24.27-66.86-1.46-5.07-4.36-4.37-12.03.14-16.37l77.95.22c16.72,7.14,27.61,17.83,32.21,35.05,3.48,20.48-.56,33.62-14.64,48.77,10.79,7.59,18.03,17.68,21.78,29.6,3.16,10.01,3.5,17.44-.15,27.82-3.21,9.14-8.89,20.15-17.29,25.44l-10.75,6.75c-2.79.18-5.07,1.02-7.22,3.21l-81.21.09c-3.25-2.02-5.07-6.87-4.08-10.18.29-5.58,4.02-6.15,9.14-8.92l72.01-.19c16.24-5.1,26.22-22.34,21.87-38.81l-2.89-6.21Z"/>
+          <path d="M817.45,110.76l21.56,30.47,18.46,25.59c1.68,2.33,2.84,5.75,2.96,8.34.11,2.26-2.38,6.78-5.06,6.85l-10.47.27-41.33-58.5-9.93-14.17-23.91-.19c-2.03-2.76-3.27-5.16-6.62-7.26l-.23,75.43c-.01,4.7-6.9,4.91-9.72,5.01-4.64.15-5.3-3.02-9.06-7.46l.02-163.59,3.81-5.15c.95-1.28,10.21-2.03,12.8.6,1.64,1.67,2.42,4.14,3.09,7.23l6.06-8.82,53.41.21c17.28,5.97,29.71,18.07,36.82,34.48-.45,3.23.54,5.84,2.76,8.24-.07,5.39.9,12.68-.59,17.5l-2.82,9.11c-4.56,14.75-17.17,25.15-31.78,31.42l-10.24,4.39ZM841.11,45.48c-3.83-11.86-14.95-18.14-27.57-22.89l-43.43-.45-7.02-7.08v84.93c6.39-7.09,11.76-11.27,20.36-9.6l36.84-.27c19.1-9.39,27.08-25.24,20.82-44.63Z"/>
+          <g>
+            <path d="M277.37,182.2l-164.36.09c-2.87-2.54-5.93-3.15-8.97-3.61-8.8-4.18-14.25-9.94-18.41-17.73l-39.37-55.1c-1.61-2.26-1.83-8.8.15-10.89,8.22-8.64,20.86-2.13,28.21-5.4,5.75-2.56,12.95-5.81,15.74-10.32l6.56-10.63.15-21.75c-4.48-13.43-14.77-20.05-28.57-24.28l-62.74-.38C2.09,20.42-.87,15.72.24,11.77S5.27,3.59,10.59,3.55l55.65-.46c3.16,2.12,6.42,2.82,10.38,2.15,23.55,6.02,41.65,27.51,40.19,51.45l-1.01,16.7c-1.77,2.19-2.82,5.21-3.22,7.84l-6.27,8.04c-15.12,19.39-36.46,16.58-31.43,23.78l32.16,46.04c3.62.95,5.68,1.95,8.55,3.99l158.98.24c5.01,0,8.05,5.56,8.29,8.48.25,3.11-.66,10.4-5.49,10.4Z"/>
+            <path d="M19.01,175.15c-3.21,5-4.12,8.26-9.3,7.03-2.52,1.19-9.55-.38-9.55-4.59L.08,31.47c3.35-5.58,10.12-6.23,15.32-3.69l3.59,5.69v141.69Z"/>
+          </g>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ====================================================
+     PAGE CONTENT
+     ==================================================== -->
+
+<header class="ref-top">
+  <div class="container">
+    <div class="ref-top-logos">
+      <span class="ref-logo-mark"><svg><use href="#rembrand-logo" /></svg></span>
+      <span class="ref-meta">Style Reference · Hero v2 standard</span>
+    </div>
+    <h1 class="ref-title">The Rembrand visual system at a glance.</h1>
+    <p class="ref-lead">
+      Every color, type size, button, card, gradient, radius and shadow
+      used across the marketing site — pulled directly from the live CSS,
+      with the Hero v2 hero as the reference standard.
+    </p>
+  </div>
+</header>
+
+<main>
+  <!-- ============== Logo ============== -->
+  <section class="ref-section" id="logo">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">01 — Logo</p>
+        <h2 class="ref-section-title">The Rembrand wordmark</h2>
+        <p class="ref-section-sub">
+          Single SVG mark, recolored via <code>currentColor</code>. Purple
+          (<code>--purple #6b46c1</code>) on light surfaces; pure white on
+          the brand-dark or hero-image gradients.
+        </p>
+      </header>
+      <div class="logo-demo-grid">
+        <div class="logo-demo-tile logo-demo-tile--light">
+          <svg><use href="#rembrand-logo" /></svg>
+          <p class="logo-demo-tile-meta">
+            On white. Color: <code>--purple</code> (<code>#6b46c1</code>).
+            Use anywhere on neutral surfaces.
+          </p>
+        </div>
+        <div class="logo-demo-tile logo-demo-tile--dark">
+          <svg><use href="#rembrand-logo" /></svg>
+          <p class="logo-demo-tile-meta">
+            On the brand purple gradient. Color: <code>#fff</code>.
+            Used inside the Hero v2 logo pill and the dark research band.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Colors ============== -->
+  <section class="ref-section" id="brand-colors">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">02 — Colors</p>
+        <h2 class="ref-section-title">Brand purple ramp</h2>
+        <p class="ref-section-sub">
+          Five-stop ramp. <code>--purple</code> is the primary brand color.
+          The deeper four are gradient stops powering the top bar, the hero
+          fallback, the research panel and the v2 logo pill.
+        </p>
+      </header>
+      <div class="swatch-grid">
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#6b46c1"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Purple</div>
+            <span class="swatch-hex">#6b46c1 · rgb(107, 70, 193)</span>
+            <span class="swatch-var">--purple</span>
+            <span class="swatch-role">Primary</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#5b3bb0"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Purple 600</div>
+            <span class="swatch-hex">#5b3bb0 · rgb(91, 59, 176)</span>
+            <span class="swatch-var">--purple-600</span>
+            <span class="swatch-role">Primary hover</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#4b2f95"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Purple 700</div>
+            <span class="swatch-hex">#4b2f95 · rgb(75, 47, 149)</span>
+            <span class="swatch-var">--purple-700</span>
+            <span class="swatch-role">Gradient stop</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#2a1a52"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Purple Deep</div>
+            <span class="swatch-hex">#2a1a52 · rgb(42, 26, 82)</span>
+            <span class="swatch-var">--purple-deep</span>
+            <span class="swatch-role">Gradient stop</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#1a0b2e"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Purple Darker</div>
+            <span class="swatch-hex">#1a0b2e · rgb(26, 11, 46)</span>
+            <span class="swatch-var">--purple-darker</span>
+            <span class="swatch-role">Deepest stop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-section" id="surface-colors">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">03 — Colors</p>
+        <h2 class="ref-section-title">Surfaces, text & borders</h2>
+      </header>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#ffffff;border-bottom:1px solid var(--border-soft)"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Background</div>
+            <span class="swatch-hex">#ffffff</span>
+            <span class="swatch-var">--bg</span>
+            <span class="swatch-role">Surface</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#fafafa"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Background Soft</div>
+            <span class="swatch-hex">#fafafa</span>
+            <span class="swatch-var">--bg-soft</span>
+            <span class="swatch-role">Surface soft</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#f4f4f6"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Background Grey</div>
+            <span class="swatch-hex">#f4f4f6</span>
+            <span class="swatch-var">--bg-grey</span>
+            <span class="swatch-role">Card placeholder</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#1f1f1f"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Text</div>
+            <span class="swatch-hex">#1f1f1f</span>
+            <span class="swatch-var">--text</span>
+            <span class="swatch-role">Text primary</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#2f2f33"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Text 2</div>
+            <span class="swatch-hex">#2f2f33</span>
+            <span class="swatch-var">--text-2</span>
+            <span class="swatch-role">Text secondary</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#6b7280"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Text Muted</div>
+            <span class="swatch-hex">#6b7280</span>
+            <span class="swatch-var">--text-muted</span>
+            <span class="swatch-role">Text muted</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#8a8a93"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Text Soft</div>
+            <span class="swatch-hex">#8a8a93</span>
+            <span class="swatch-var">--text-soft</span>
+            <span class="swatch-role">Mega-menu heading</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#e6e6ea"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Border</div>
+            <span class="swatch-hex">#e6e6ea</span>
+            <span class="swatch-var">--border</span>
+            <span class="swatch-role">Stroke</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#f0f0f3"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Border Soft</div>
+            <span class="swatch-hex">#f0f0f3</span>
+            <span class="swatch-var">--border-soft</span>
+            <span class="swatch-role">Hairline</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#2a2a2e"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Btn Dark</div>
+            <span class="swatch-hex">#2a2a2e</span>
+            <span class="swatch-role">Accent</span>
+          </div>
+        </div>
+        <div class="swatch swatch--dark">
+          <div class="swatch-color" style="background:#1a1a1e"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Btn Dark Hover</div>
+            <span class="swatch-hex">#1a1a1e</span>
+            <span class="swatch-role">Accent hover</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Typography ============== -->
+  <section class="ref-section" id="typography">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">04 — Typography</p>
+        <h2 class="ref-section-title">One typeface. Twelve sizes.</h2>
+        <p class="ref-section-sub">
+          Halyard Display via Adobe Fonts kit <code>psc7vjb</code>, with
+          Hanken Grotesk → Inter → system sans as the fallback ladder.
+          Weights used: 400 (regular) and 500 (medium).
+        </p>
+      </header>
+
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Eyebrow</strong>
+          11px / 1.3 / 500<br/>
+          tracking 0.08em · UPPER
+        </div>
+        <div class="t-eyebrow">Powering Every Placement</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Nav link</strong>
+          12px / 1 / 500<br/>
+          tracking 0.06em · UPPER
+        </div>
+        <div class="t-nav">Advertisers · Publishers · Platform</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Mega-menu sub</strong>
+          12.5px / 1.35 / 400
+        </div>
+        <div class="t-mega-sub">Brand placements inside existing video</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Footer</strong>
+          13px / 1.4 / 400
+        </div>
+        <div class="t-footer">© 2026 Rembrand, Inc. All rights reserved.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Card body</strong>
+          14px / 1.45 / 400
+        </div>
+        <div class="t-card">
+          Two formats — VOOH and VPP — built into the viewing experience,
+          not interrupting it. Seen, not skipped.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Partners label</strong>
+          15px / 400
+        </div>
+        <div class="t-partners">We partner with the best in the world</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Body base</strong>
+          16px / 1.4 / 400
+        </div>
+        <div class="t-body">
+          Rembrand is the platform built for this shift.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Research / hero sub</strong>
+          17px / 1.45 / 400
+        </div>
+        <div class="t-research">
+          A 1B parameter base model, enhanced by CPT-1.2, trained on over 100M+
+          unique proprietary data points to deliver unrivaled high fidelity
+          brand placement.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>About intro</strong>
+          19px / 1.55 / 400
+        </div>
+        <div class="t-intro">
+          For decades, advertising and content have existed in opposition —
+          interrupting each other and competing for the same attention.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Card H3</strong>
+          24px / 1.15 / 400<br/>
+          tracking -0.015em
+        </div>
+        <div class="t-card-h3">In-Content Advertising</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Section title</strong>
+          clamp(28, 3.4vw, 40)<br/>
+          1.1 / 400 / -0.02em
+        </div>
+        <div class="t-section-title">Built for in-content advertising</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Mission</strong>
+          32px / 1.2 / 400<br/>
+          tracking -0.015em
+        </div>
+        <div class="t-mission">
+          AI is blurring the lines between advertising and content.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Hero subtitle</strong>
+          clamp(15, 1.4vw, 17)<br/>
+          1.45 / rgba(31,31,31,.7)
+        </div>
+        <div class="t-hero-sub">
+          Rembrand embeds your brand directly into existing video — and transforms TV, Social, and Creator Content into consumer action.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec">
+          <strong>Hero title (Standard)</strong>
+          clamp(36, 5.4vw, 64)<br/>
+          1.06 / 400 / -0.02em
+        </div>
+        <div class="t-hero-title">Ads That Become One with the Content.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Buttons ============== -->
+  <section class="ref-section" id="buttons">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">05 — Buttons</p>
+        <h2 class="ref-section-title">Six pill buttons</h2>
+        <p class="ref-section-sub">
+          All buttons share the same shape: 32px tall, 999px radius, 14/500
+          type, 18px horizontal padding. Variants change surface, stroke and
+          mode (over light vs. over dark imagery).
+        </p>
+      </header>
+      <div class="btn-gallery">
+        <div class="btn-tile">
+          <span class="btn-tile-name">btn-primary</span>
+          <div class="btn-tile-row">
+            <button class="btn btn-primary">See it in Action</button>
+            <button class="btn btn-primary btn-sm">Try Now</button>
+          </div>
+          <p class="btn-tile-meta">
+            Brand purple. Hover deepens to <code>#5b3bb0</code>. Default page CTA.
+          </p>
+        </div>
+
+        <div class="btn-tile">
+          <span class="btn-tile-name">btn-ghost</span>
+          <div class="btn-tile-row">
+            <button class="btn btn-ghost">Log in</button>
+            <button class="btn btn-ghost btn-sm">Cancel</button>
+          </div>
+          <p class="btn-tile-meta">
+            Transparent on neutral surfaces with a 1px border.
+            Hover fills with <code>--bg-grey</code>.
+          </p>
+        </div>
+
+        <div class="btn-tile">
+          <span class="btn-tile-name">btn-soft</span>
+          <div class="btn-tile-row">
+            <button class="btn btn-soft">Publishers</button>
+            <button class="btn btn-soft btn-sm">Continue</button>
+          </div>
+          <p class="btn-tile-meta">
+            Frosted white pill. <code>rgba(255,255,255,0.92)</code> + 8px
+            backdrop blur. Designed to sit over hero imagery.
+          </p>
+        </div>
+
+        <div class="btn-tile">
+          <span class="btn-tile-name">btn-dark</span>
+          <div class="btn-tile-row">
+            <button class="btn btn-dark">Learn More</button>
+            <button class="btn btn-dark btn-sm">Read</button>
+          </div>
+          <p class="btn-tile-meta">
+            Charcoal pill — used inside capability and latest cards.
+            Hover deepens to <code>#1a1a1e</code>.
+          </p>
+        </div>
+
+        <div class="btn-tile btn-tile--dark">
+          <span class="btn-tile-name">btn-stroke-light</span>
+          <div class="btn-tile-row">
+            <button class="btn btn-stroke-light">Read more</button>
+            <button class="btn btn-stroke-light btn-sm">View</button>
+          </div>
+          <p class="btn-tile-meta">
+            White-stroke pill. Lives over dark imagery (card overlays,
+            research band). Hover frosts a faint white wash with backdrop blur.
+          </p>
+        </div>
+
+        <div class="btn-tile btn-tile--dark">
+          <span class="btn-tile-name">btn-ghost <em style="font-style:normal;color:rgba(255,255,255,0.6);">(over Hero v2)</em></span>
+          <div class="btn-tile-row">
+            <button class="btn btn-demo-frosted">Log in</button>
+            <button class="btn btn-demo-frosted btn-sm">Sign up</button>
+          </div>
+          <p class="btn-tile-meta">
+            Same <code>btn-ghost</code> class — repainted by
+            <code>.hero-variant-2 .site-header .header-actions .btn-ghost</code>
+            when it sits over hero imagery: <code>rgba(255,255,255,0.12)</code>
+            background, 12px backdrop blur, 0.4 white stroke. Same override
+            recolors <code>btn-soft</code> on the v2 hero so they pair.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Cards ============== -->
+  <section class="ref-section" id="cards">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">06 — Cards</p>
+        <h2 class="ref-section-title">Card patterns</h2>
+        <p class="ref-section-sub">
+          Four reusable card shapes: capability (4-up grid), latest (image-text
+          row), feature (16:9 video card with bottom-left label), and research
+          (3-up grid on dark).
+        </p>
+      </header>
+
+      <h3 class="t-card-h3" style="margin-bottom:24px;">Capability cards</h3>
+      <div class="card-grid">
+        <article class="demo-cap-card">
+          <div class="demo-media"></div>
+          <p class="demo-lede">Your Brand, In the Content</p>
+          <h3>In-Content Advertising</h3>
+          <p>
+            Two formats — VOOH and VPP — built into the viewing experience,
+            not interrupting it. Seen, not skipped.
+          </p>
+          <button class="btn btn-dark btn-sm">Learn More</button>
+        </article>
+        <article class="demo-cap-card">
+          <div class="demo-media"></div>
+          <p class="demo-lede">Powering Every Placement</p>
+          <h3>AI Video Platform</h3>
+          <p>
+            A publisher-first platform that identifies placement
+            opportunities, optimizes scenes, and delivers final creative.
+          </p>
+          <button class="btn btn-dark btn-sm">Learn More</button>
+        </article>
+        <article class="demo-cap-card">
+          <div class="demo-media"></div>
+          <p class="demo-lede">Production at Scale</p>
+          <h3>Virtual Content Studios</h3>
+          <p>
+            Real-world capture meets AI-driven workflows — global studios
+            deliver at the quality and speed modern content demands.
+          </p>
+          <button class="btn btn-dark btn-sm">Learn More</button>
+        </article>
+      </div>
+
+      <h3 class="t-card-h3" style="margin: 56px 0 24px;">Latest row</h3>
+      <article class="demo-latest-row">
+        <div class="demo-latest-thumb"></div>
+        <div class="demo-latest-text">
+          <h3>Introducing Cinematic Precision Technology&trade;</h3>
+          <p>
+            CPT-1.2 upgrades leading video models with proprietary
+            intelligence, delivering sub-pixel 4K accuracy.
+          </p>
+          <button class="btn btn-dark btn-sm">Learn More</button>
+        </div>
+      </article>
+
+      <h3 class="t-card-h3" style="margin: 56px 0 24px;">Feature card</h3>
+      <article class="demo-feature-card">
+        <div class="demo-feature-label">
+          <svg class="demo-feature-play" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+            <path d="M6.83 0c3.43.17 6.17 3.02 6.17 6.5l-.01.33c-.17 3.43-3.01 6.17-6.5 6.17l-.34-.01C2.84 12.82.18 10.16.01 6.83L0 6.5C0 2.91 2.91 0 6.5 0L6.83 0Zm-.33.91C3.41.91.91 3.41.91 6.5c0 3.09 2.5 5.59 5.59 5.59 3.09 0 5.58-2.5 5.59-5.59 0-3.09-2.5-5.59-5.59-5.59ZM9.41 6.39 5.21 8.81V3.96L9.41 6.39Z" fill="#fff"/>
+          </svg>
+          <span class="demo-feature-title">Introducing Cinematic Precision Technology&trade;</span>
+        </div>
+      </article>
+
+      <h3 class="t-card-h3" style="margin: 56px 0 24px;">Research grid</h3>
+      <div class="demo-research-grid">
+        <a href="#" class="demo-research-card">
+          <div class="demo-research-thumb"></div>
+          <div class="demo-research-card-title">Introducing Cinematic Precision Technology</div>
+          <div class="demo-research-meta">
+            <span>Research</span><span>/</span><span>March 12, 2026</span>
+          </div>
+        </a>
+        <a href="#" class="demo-research-card">
+          <div class="demo-research-thumb"></div>
+          <div class="demo-research-card-title">The Art of Reinforcement Learning</div>
+          <div class="demo-research-meta">
+            <span>Research</span><span>/</span><span>January 28, 2026</span>
+          </div>
+        </a>
+        <a href="#" class="demo-research-card">
+          <div class="demo-research-thumb"></div>
+          <div class="demo-research-card-title">Social and Creator Content Ads</div>
+          <div class="demo-research-meta">
+            <span>Research</span><span>/</span><span>November 4, 2025</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Hero v2 reference ============== -->
+  <section class="ref-section" id="hero-reference">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">07 — Hero v2 (reference standard)</p>
+        <h2 class="ref-section-title">Frame, vignette, pill, headline.</h2>
+        <p class="ref-section-sub">
+          16px-radius frame, 24px gutter, content-padded box. Vignette is
+          two stacked radial gradients. Centered logo pill uses the brand
+          gradient with a tight close shadow + soft ambient drop.
+        </p>
+      </header>
+
+      <!-- Real homepage screenshot, captured from the live site -->
+      <figure style="margin: 0 0 32px;">
+        <img src="homepage-screenshot.png"
+             alt="Live screenshot of the Hero v2 homepage"
+             style="display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 1px 2px rgba(20,20,30,.06), 0 18px 36px rgba(20,20,30,.08);" />
+        <figcaption style="margin-top:10px;font-size:12px;color:var(--text-muted);">
+          Live capture: <code>index-hero-v2.html</code> · 1440 viewport
+        </figcaption>
+      </figure>
+
+      <!-- Live CSS recreation of the same hero -->
+      <p class="ref-eyebrow" style="margin-bottom:12px;">Live CSS recreation</p>
+      <div class="hero-v2">
+        <div class="hero-v2-pill">
+          <svg><use href="#rembrand-logo" /></svg>
+        </div>
+        <h2 class="hero-v2-title">Ads That Become One with the Content.</h2>
+        <p class="hero-v2-sub">
+          Rembrand embeds your brand directly into existing video — and
+          transforms TV, Social, and Creator Content into consumer action.
+        </p>
+        <div class="hero-v2-actions">
+          <button class="btn btn-primary">See it in Action</button>
+          <button class="btn btn-soft">Publishers</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Gradients ============== -->
+  <section class="ref-section" id="gradients">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">08 — Gradients</p>
+        <h2 class="ref-section-title">Brand gradients</h2>
+      </header>
+      <div class="grad-grid">
+        <div class="grad-card">
+          <div class="grad-swatch grad-top-bar"></div>
+          <div class="grad-meta">
+            <div class="grad-name">Top bar</div>
+            <div class="grad-detail">linear 90deg · #1a0b2e → #2a1a52 → #1a0b2e</div>
+          </div>
+        </div>
+        <div class="grad-card">
+          <div class="grad-swatch grad-hero-fallback"></div>
+          <div class="grad-meta">
+            <div class="grad-name">Hero fallback</div>
+            <div class="grad-detail">linear 180deg · #1a0b2e → #2a1a52 → #4b2f95 → #6b46c1</div>
+          </div>
+        </div>
+        <div class="grad-card">
+          <div class="grad-swatch grad-research"></div>
+          <div class="grad-meta">
+            <div class="grad-name">Research / Logo pill</div>
+            <div class="grad-detail">linear 135deg + two radial highlights at 20%/30% and 90%/80%</div>
+          </div>
+        </div>
+        <div class="grad-card">
+          <div class="grad-swatch grad-overlay"></div>
+          <div class="grad-meta">
+            <div class="grad-name">Hero overlay (vignette)</div>
+            <div class="grad-detail">radial 85%·85% transparent → black 75%, plus soft top wash 60%·35% at 50%/32%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Radius ============== -->
+  <section class="ref-section" id="radius">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">09 — Border radius</p>
+        <h2 class="ref-section-title">Graduated radius scale</h2>
+        <p class="ref-section-sub">
+          Size-aware: smaller surfaces use a tighter curve so the radius
+          reads as proportionally consistent at every scale. Five values
+          cover the system — four rectangular sizes that step up with
+          surface area, plus 999px for anything pill-shaped.
+        </p>
+      </header>
+      <div class="radius-grid">
+        <div class="radius-tile r-8">
+          <div class="swatch-color"></div>
+          <span class="radius-label">8px</span>
+          <span class="radius-meta">Mega-menu hover background</span>
+        </div>
+        <div class="radius-tile r-12">
+          <div class="swatch-color"></div>
+          <span class="radius-label">12px</span>
+          <span class="radius-meta">--radius / --radius-media · all media cards (cap, latest, gallery, research thumbs, feature card, research panel)</span>
+        </div>
+        <div class="radius-tile r-14">
+          <div class="swatch-color"></div>
+          <span class="radius-label">14px</span>
+          <span class="radius-meta">.nav-dropdown card (steps between item pills and hero frame)</span>
+        </div>
+        <div class="radius-tile r-16">
+          <div class="swatch-color"></div>
+          <span class="radius-label">16px</span>
+          <span class="radius-meta">Hero v2 frame · about-page hero</span>
+        </div>
+        <div class="radius-tile r-pill">
+          <div class="swatch-color"></div>
+          <span class="radius-label">999px</span>
+          <span class="radius-meta">Buttons · v2 logo pill · eyebrow chips</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Shadows ============== -->
+  <section class="ref-section" id="shadows">
+    <div class="container">
+      <header class="ref-section-head">
+        <p class="ref-eyebrow">10 — Shadows</p>
+        <h2 class="ref-section-title">Four elevations</h2>
+        <p class="ref-section-sub">
+          The approved pages only use four box-shadow recipes. Two earlier
+          card shadows belonged to the removed <code>.sca-format-card</code>
+          pattern and have been dropped.
+        </p>
+      </header>
+      <div class="shadow-grid">
+        <div class="shadow-tile sh-tight">
+          <div class="shadow-tile-name">Tight lift</div>
+          <div class="shadow-tile-meta">
+            <code>0 1px 2px rgba(0,0,0,.5)</code><br/>
+            Used on hero / about-hero CTAs.
+          </div>
+        </div>
+        <div class="shadow-tile sh-nav">
+          <div class="shadow-tile-name">Nav dropdown</div>
+          <div class="shadow-tile-meta">
+            3-stop: <code>0 1px 2px / 0 8px 18px / 0 32px 60px</code> rgba(20,20,30,.06–.18) ·
+            on the white nav-dropdown card.
+          </div>
+        </div>
+        <div class="shadow-tile sh-pill">
+          <div class="shadow-tile-name">v2 logo pill — resting</div>
+          <div class="shadow-tile-meta">
+            <code>0 1px 2px rgba(0,0,0,.5), 0 6px 18px rgba(20,20,30,.22)</code><br/>
+            Tight close shadow + soft ambient drop.
+          </div>
+        </div>
+        <div class="shadow-tile sh-pill-scrolled">
+          <div class="shadow-tile-name">v2 logo pill — scrolled</div>
+          <div class="shadow-tile-meta">
+            <code>0 4px 14px rgba(20,20,30,.18)</code><br/>
+            Single ambient drop once the page scrolls.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ref-footer">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;width:100%;">
+      <span class="ref-footer-mark"><svg><use href="#rembrand-logo" /></svg></span>
+      <span>Rembrand Style Reference · v1.0 · 2026</span>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>

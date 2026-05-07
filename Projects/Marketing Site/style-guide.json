@@ -1,0 +1,605 @@
+{
+  "$schema": "https://json.schemastore.org/style-guide.json",
+  "name": "Rembrand Marketing Site Style Guide",
+  "description": "Design tokens extracted from styles.css. Reference standard: index-hero-v2.html (homepage Hero v2). Use hex/rgb values directly or the CSS custom property names listed under each token.",
+  "version": "1.0.0",
+  "updated": "2026-05-01",
+  "reference_standard": "index-hero-v2.html",
+
+  "colors": {
+    "brand": {
+      "purple": {
+        "hex": "#6b46c1",
+        "rgb": "rgb(107, 70, 193)",
+        "css_var": "--purple",
+        "role": "primary",
+        "usage": "Primary brand color. Background of .btn-primary; logo wordmark fill; hover/accent color throughout the nav and links."
+      },
+      "purple_600": {
+        "hex": "#5b3bb0",
+        "rgb": "rgb(91, 59, 176)",
+        "css_var": "--purple-600",
+        "role": "primary-hover",
+        "usage": "Hover state for .btn-primary."
+      },
+      "purple_700": {
+        "hex": "#4b2f95",
+        "rgb": "rgb(75, 47, 149)",
+        "css_var": "--purple-700",
+        "role": "primary-deep",
+        "usage": "Tail color of the v2 logo-pill gradient and the deep-purple radial bands."
+      },
+      "purple_deep": {
+        "hex": "#2a1a52",
+        "rgb": "rgb(42, 26, 82)",
+        "css_var": "--purple-deep",
+        "role": "primary-deep-2",
+        "usage": "Mid stop of the top-bar, hero-media fallback, and research/pill gradients."
+      },
+      "purple_darker": {
+        "hex": "#1a0b2e",
+        "rgb": "rgb(26, 11, 46)",
+        "css_var": "--purple-darker",
+        "role": "primary-deepest",
+        "usage": "Darkest stop of every brand gradient (top-bar, hero fallback, research panel, v2 logo pill)."
+      }
+    },
+    "background": {
+      "bg": {
+        "hex": "#ffffff",
+        "rgb": "rgb(255, 255, 255)",
+        "css_var": "--bg",
+        "role": "surface-default",
+        "usage": "Page background; .nav-dropdown panel; mobile header overlay."
+      },
+      "bg_soft": {
+        "hex": "#fafafa",
+        "rgb": "rgb(250, 250, 250)",
+        "css_var": "--bg-soft",
+        "role": "surface-soft",
+        "usage": "Subtle off-white surface (defined; reserved for tonal panels)."
+      },
+      "bg_grey": {
+        "hex": "#f4f4f6",
+        "rgb": "rgb(244, 244, 246)",
+        "css_var": "--bg-grey",
+        "role": "surface-muted",
+        "usage": "Card placeholder bg (.cap-media, .latest-thumb, sca cards) before media loads."
+      }
+    },
+    "text": {
+      "text": {
+        "hex": "#1f1f1f",
+        "rgb": "rgb(31, 31, 31)",
+        "css_var": "--text",
+        "role": "text-primary",
+        "usage": "Body copy, headings, default link color."
+      },
+      "text_2": {
+        "hex": "#2f2f33",
+        "rgb": "rgb(47, 47, 51)",
+        "css_var": "--text-2",
+        "role": "text-secondary",
+        "usage": "Mission/intro paragraphs, .btn-ghost text."
+      },
+      "text_muted": {
+        "hex": "#6b7280",
+        "rgb": "rgb(107, 114, 128)",
+        "css_var": "--text-muted",
+        "role": "text-muted",
+        "usage": "Card body copy, footer copy, partner label, eyebrow base."
+      },
+      "text_soft": {
+        "hex": "#8a8a93",
+        "rgb": "rgb(138, 138, 147)",
+        "css_var": "--text-soft",
+        "role": "text-soft",
+        "usage": "Mega-menu column headings."
+      },
+      "text_inverted": {
+        "hex": "#ffffff",
+        "rgb": "rgb(255, 255, 255)",
+        "role": "text-on-dark",
+        "usage": "Text on the hero, research band, dark buttons, v2 nav over imagery."
+      }
+    },
+    "border": {
+      "border": {
+        "hex": "#e6e6ea",
+        "rgb": "rgb(230, 230, 234)",
+        "css_var": "--border",
+        "role": "border-default",
+        "usage": "Default 1px stroke for ghost buttons, dividers."
+      },
+      "border_soft": {
+        "hex": "#f0f0f3",
+        "rgb": "rgb(240, 240, 243)",
+        "css_var": "--border-soft",
+        "role": "border-soft",
+        "usage": "Header bottom hairline, footer top hairline, mobile menu hairline."
+      }
+    },
+    "accent": {
+      "btn_dark_bg": {
+        "hex": "#2a2a2e",
+        "rgb": "rgb(42, 42, 46)",
+        "role": "accent-dark",
+        "usage": "Background of .btn-dark (small dark CTA on capability and latest cards)."
+      },
+      "btn_dark_hover": {
+        "hex": "#1a1a1e",
+        "rgb": "rgb(26, 26, 30)",
+        "role": "accent-dark-hover",
+        "usage": "Hover state for .btn-dark."
+      },
+      "purple_light_accent": {
+        "rgb": "rgb(140, 90, 220)",
+        "rgba": "rgba(140, 90, 220, 0.4)",
+        "usage": "Top-left radial highlight in research/pill gradients."
+      },
+      "purple_mid_accent": {
+        "rgb": "rgb(80, 50, 160)",
+        "rgba": "rgba(80, 50, 160, 0.5)",
+        "usage": "Bottom-right radial highlight in research/pill gradients."
+      }
+    },
+    "alpha": {
+      "white_12": "rgba(255, 255, 255, 0.12)",
+      "white_22": "rgba(255, 255, 255, 0.22)",
+      "white_40": "rgba(255, 255, 255, 0.4)",
+      "white_60": "rgba(255, 255, 255, 0.6)",
+      "white_70": "rgba(255, 255, 255, 0.7)",
+      "white_88": "rgba(255, 255, 255, 0.88)",
+      "white_92": "rgba(255, 255, 255, 0.92)",
+      "white_96": "rgba(255, 255, 255, 0.96)",
+      "black_30": "rgba(0, 0, 0, 0.3)",
+      "black_50": "rgba(0, 0, 0, 0.5)",
+      "black_55": "rgba(0, 0, 0, 0.55)",
+      "black_75": "rgba(0, 0, 0, 0.75)",
+      "deep_wash_35": "rgba(15, 8, 25, 0.35)",
+      "shadow_06": "rgba(20, 20, 30, 0.06)",
+      "shadow_08": "rgba(20, 20, 30, 0.08)",
+      "shadow_18": "rgba(20, 20, 30, 0.18)",
+      "shadow_22": "rgba(20, 20, 30, 0.22)",
+      "purple_06": "rgba(107, 70, 193, 0.06)",
+      "purple_08": "rgba(107, 70, 193, 0.08)",
+      "purple_10": "rgba(107, 70, 193, 0.10)"
+    }
+  },
+
+  "typography": {
+    "font_families": {
+      "sans_primary": {
+        "css_var": "--font-sans",
+        "stack": "\"halyard-display\", \"Hanken Grotesk\", \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+        "primary": "halyard-display",
+        "fallback_websafe": "Hanken Grotesk",
+        "fallback_secondary": "Inter",
+        "system_fallbacks": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", "sans-serif"],
+        "usage": "All headings and body copy. Halyard Display loads via Adobe Fonts kit psc7vjb."
+      }
+    },
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "scale": {
+      "eyebrow": {
+        "font_size": "11px",
+        "font_weight": 500,
+        "line_height": 1.3,
+        "letter_spacing": "0.08em",
+        "text_transform": "uppercase",
+        "usage": ".eyebrow, .cap-lede, .sca-eyebrow"
+      },
+      "nav_link": {
+        "font_size": "12px",
+        "font_weight": 500,
+        "line_height": 1,
+        "letter_spacing": "0.06em",
+        "text_transform": "uppercase",
+        "usage": ".primary-nav a, .primary-nav .nav-trigger"
+      },
+      "nav_mega_sub": {
+        "font_size": "12.5px",
+        "font_weight": 400,
+        "line_height": 1.35
+      },
+      "footer_copy": {
+        "font_size": "13px",
+        "font_weight": 400,
+        "line_height": 1.4
+      },
+      "btn_default": {
+        "font_size": "14px",
+        "font_weight": 500,
+        "line_height": 1,
+        "letter_spacing": "-0.005em"
+      },
+      "btn_small": {
+        "font_size": "13px",
+        "font_weight": 500
+      },
+      "card_body": {
+        "font_size": "14px",
+        "font_weight": 400,
+        "line_height": 1.45
+      },
+      "partners_text": {
+        "font_size": "15px",
+        "font_weight": 400
+      },
+      "body_base": {
+        "font_size": "16px",
+        "font_weight": 400,
+        "line_height": 1.4
+      },
+      "research_text": {
+        "font_size": "17px",
+        "font_weight": 400,
+        "line_height": 1.45
+      },
+      "intro_paragraph": {
+        "font_size_mobile": "18px",
+        "font_size_desktop": "19px",
+        "font_weight": 400,
+        "line_height": 1.55
+      },
+      "card_title_h3": {
+        "font_size": "24px",
+        "font_weight": 400,
+        "line_height": 1.15,
+        "letter_spacing": "-0.015em",
+        "usage": ".cap-card h3, .latest-text h3"
+      },
+      "latest_title": {
+        "font_size_clamp": "clamp(22px, 2.2vw, 26px)",
+        "font_weight": 400
+      },
+      "section_title_h2": {
+        "font_size_clamp": "clamp(28px, 3.4vw, 40px)",
+        "font_weight": 400,
+        "line_height": 1.1,
+        "letter_spacing": "-0.02em",
+        "usage": ".sca-section-title"
+      },
+      "mission_text": {
+        "font_size": "32px",
+        "font_size_mobile_768": "26px",
+        "font_size_mobile_560": "22px",
+        "font_weight": 400,
+        "line_height": 1.2,
+        "letter_spacing": "-0.015em"
+      },
+      "hero_sub": {
+        "font_size_clamp": "clamp(15px, 1.4vw, 17px)",
+        "font_weight": 400,
+        "line_height": 1.45,
+        "color": "rgba(255,255,255,0.88)",
+        "max_width": "64ch",
+        "usage": ".hero-sub on Hero v2"
+      },
+      "hero_title": {
+        "font_size_clamp": "clamp(36px, 5.4vw, 64px)",
+        "font_weight": 400,
+        "line_height": 1.06,
+        "letter_spacing": "-0.02em",
+        "color": "#ffffff",
+        "max_width": "880px",
+        "text_shadow": "0 1px 2px rgba(0, 0, 0, 0.5), 0 2px 24px rgba(0, 0, 0, 0.25)",
+        "usage": ".hero-title on Hero v2 — REFERENCE STANDARD"
+      }
+    }
+  },
+
+  "spacing": {
+    "container_max_width": "1180px",
+    "gutter": "24px",
+    "css_vars": {
+      "--container": "1180px",
+      "--gutter": "24px"
+    },
+    "scale": {
+      "0_5": "2px",
+      "1": "4px",
+      "1_5": "6px",
+      "2": "8px",
+      "2_5": "10px",
+      "3": "12px",
+      "3_5": "14px",
+      "4": "16px",
+      "4_5": "18px",
+      "5": "20px",
+      "6": "24px",
+      "7": "28px",
+      "8": "32px",
+      "9": "36px",
+      "10": "40px",
+      "12": "48px",
+      "14": "56px",
+      "16": "64px",
+      "20": "80px",
+      "22": "88px",
+      "24": "96px",
+      "30": "120px",
+      "35": "140px",
+      "45": "182px"
+    },
+    "section_padding_y": {
+      "partners": "88px 0 24px",
+      "mission": "80px 0 40px",
+      "capabilities": "32px 0 96px",
+      "latest": "24px 0 96px",
+      "research_outer": "0 var(--gutter) 48px",
+      "research_inner": "64px 56px",
+      "footer": "32px 0 40px"
+    },
+    "hero_v2_padding": {
+      "hero_inner_base": "120px 24px 140px",
+      "hero_inner_v2_top": "140px",
+      "hero_inner_v2_widescreen_min1280": "182px top + 182px bottom",
+      "hero_inner_mobile_max768": "80px 20px 96px",
+      "hero_inner_mobile_max560": "64px 18px 80px"
+    }
+  },
+
+  "border_radius": {
+    "system": "Graduated (size-aware) scale. Smaller surfaces use a tighter curve so the perceived roundness reads as proportionally consistent at every size. Five values cover the system.",
+    "css_vars": {
+      "--radius": "12px",
+      "--radius-media": "12px"
+    },
+    "values": {
+      "hover_pill": "8px",
+      "media": "12px",
+      "nav_dropdown": "14px",
+      "hero_frame": "16px",
+      "pill": "999px"
+    },
+    "usage": {
+      "8px": ".nav-mega-list a — hover background behind each item in the nav dropdown.",
+      "12px": "All media cards (.cap-media, .latest-thumb, .about-feature-card, .about-gallery-item, .about-research-thumb) and the .research-inner panel. Tokenized as --radius / --radius-media.",
+      "14px": ".nav-dropdown card — one step larger than the 8px hover pill nested inside it.",
+      "16px": "Hero v2 frame (.hero-variant-2 .hero) and about-page hero (.about-hero) — bigger surface needs the bigger curve to feel right.",
+      "999px": "All buttons (.btn family), the v2 centered logo pill, the dev-only switchers."
+    },
+    "design_rationale": "Each container nests inside one with a slightly larger radius, creating clean visual hierarchy: 8px hover pill → inside 14px nav dropdown → 12px media cards → inside 16px hero frames."
+  },
+
+  "gradients": {
+    "top_bar": {
+      "css": "linear-gradient(90deg, #1a0b2e 0%, #2a1a52 50%, #1a0b2e 100%)",
+      "type": "linear",
+      "angle": "90deg",
+      "stops": [
+        { "color": "#1a0b2e", "position": "0%" },
+        { "color": "#2a1a52", "position": "50%" },
+        { "color": "#1a0b2e", "position": "100%" }
+      ],
+      "usage": ".top-bar (hidden on Hero v2)"
+    },
+    "hero_media_fallback": {
+      "css": "linear-gradient(180deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 90%, #6b46c1 100%)",
+      "type": "linear",
+      "angle": "180deg",
+      "stops": [
+        { "color": "#1a0b2e", "position": "0%" },
+        { "color": "#2a1a52", "position": "50%" },
+        { "color": "#4b2f95", "position": "90%" },
+        { "color": "#6b46c1", "position": "100%" }
+      ],
+      "usage": ".hero-media (Hero v2 background fallback while image loads)"
+    },
+    "hero_overlay_vignette": {
+      "css": "radial-gradient(ellipse 85% 85% at center, transparent 25%, rgba(0,0,0,0.75) 100%), radial-gradient(ellipse 60% 35% at 50% 32%, rgba(0,0,0,0.3), transparent 70%)",
+      "type": "radial-stack",
+      "purpose": "Edge-darkening vignette + soft top-center wash for headline legibility on Hero v2.",
+      "usage": ".hero-overlay, .about-hero-overlay"
+    },
+    "research_panel": {
+      "css": "radial-gradient(60% 60% at 20% 30%, rgba(140, 90, 220, 0.4), transparent 70%), radial-gradient(50% 60% at 90% 80%, rgba(80, 50, 160, 0.5), transparent 70%), linear-gradient(135deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 100%)",
+      "type": "radial-over-linear",
+      "stops_linear": [
+        { "color": "#1a0b2e", "position": "0%" },
+        { "color": "#2a1a52", "position": "50%" },
+        { "color": "#4b2f95", "position": "100%" }
+      ],
+      "usage": ".research-inner, .about-research"
+    },
+    "v2_logo_pill": {
+      "css": "radial-gradient(60% 60% at 20% 30%, rgba(140, 90, 220, 0.4), transparent 70%), radial-gradient(50% 60% at 90% 80%, rgba(80, 50, 160, 0.5), transparent 70%), linear-gradient(135deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 100%)",
+      "type": "radial-over-linear",
+      "purpose": "Centered Hero v2 logo pill — same gradient recipe as research panel for visual continuity.",
+      "usage": ".hero-variant-2 .header-inner > .logo"
+    },
+    "open_roles_fade": {
+      "css": "linear-gradient(to bottom, rgba(255,255,255,0), #fff)",
+      "type": "linear",
+      "purpose": "Soft white fade at the bottom of the open roles list.",
+      "usage": ".about-roles-fade"
+    },
+    "feature_card_overlay": {
+      "css": "linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.45) 100%)",
+      "purpose": "Bottom-only darkening on the feature video card.",
+      "usage": ".about-feature-overlay"
+    }
+  },
+
+  "shadows": {
+    "tight_lift_dark": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.5)",
+      "usage": "Hero CTAs, hero-pill close shadow, v2 logo pill close shadow."
+    },
+    "card_lift_1": {
+      "value": "0 1px 2px rgba(20, 20, 30, 0.04)",
+      "usage": "Resting state for .sca-format-card."
+    },
+    "card_lift_2": {
+      "value": "0 1px 2px rgba(20, 20, 30, 0.06), 0 18px 36px rgba(20, 20, 30, 0.08)",
+      "usage": ".sca-format-card hover."
+    },
+    "scrolled_header_hairline": {
+      "value": "0 1px 0 rgba(20, 20, 30, 0.02)",
+      "usage": ".hero-variant-2 .site-header.is-scrolled::before"
+    },
+    "nav_dropdown_card": {
+      "value": "0 1px 2px rgba(20, 20, 30, .06), 0 8px 18px rgba(20, 20, 30, .08), 0 32px 60px rgba(20, 20, 30, .18)",
+      "usage": ".nav-dropdown panel"
+    },
+    "v2_logo_pill_resting": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 18px rgba(20, 20, 30, 0.22)",
+      "usage": ".hero-variant-2 .header-inner > .logo"
+    },
+    "v2_logo_pill_scrolled": {
+      "value": "0 4px 14px rgba(20, 20, 30, 0.18)",
+      "usage": ".hero-variant-2 .site-header.is-scrolled .header-inner > .logo"
+    }
+  },
+
+  "blur_and_filter": {
+    "header_frosted_v2": "blur(22px) saturate(180%)",
+    "header_frosted_v1": "blur(12px) saturate(180%)",
+    "soft_button_blur": "blur(8px)",
+    "frosted_button_blur": "blur(12px) saturate(140%)",
+    "card_overlay_blur": "blur(6px)",
+    "logo_monochrome": "brightness(0) opacity(0.55)"
+  },
+
+  "buttons": {
+    "btn": {
+      "height": "32px",
+      "padding": "0 18px",
+      "border_radius": "999px",
+      "font_size": "14px",
+      "font_weight": 500,
+      "letter_spacing": "-0.005em"
+    },
+    "btn_primary": {
+      "background": "#6b46c1",
+      "color": "#ffffff",
+      "hover_background": "#5b3bb0"
+    },
+    "btn_ghost": {
+      "background": "transparent",
+      "color": "#2f2f33",
+      "border": "1px solid #e6e6ea",
+      "hover_background": "#f4f4f6"
+    },
+    "btn_soft": {
+      "background": "rgba(255, 255, 255, 0.92)",
+      "color": "#1f1f1f",
+      "backdrop_filter": "blur(8px)",
+      "hover_background": "#ffffff"
+    },
+    "btn_dark": {
+      "background": "#2a2a2e",
+      "color": "#ffffff",
+      "hover_background": "#1a1a1e"
+    },
+    "btn_stroke_light": {
+      "background": "transparent",
+      "color": "#ffffff",
+      "border": "1px solid rgba(255, 255, 255, 0.9)",
+      "hover_background": "rgba(255, 255, 255, 0.22)",
+      "hover_backdrop_filter": "blur(12px) saturate(140%)"
+    },
+    "btn_sm": {
+      "padding": "0 14px",
+      "font_size": "13px"
+    },
+    "v2_frosted_buttons_over_hero": {
+      "background": "rgba(255, 255, 255, 0.12)",
+      "color": "#ffffff",
+      "border": "1px solid rgba(255, 255, 255, 0.4)",
+      "backdrop_filter": "blur(12px) saturate(140%)",
+      "applies_to": [".hero-variant-2 .site-header .header-actions .btn-ghost", ".hero-variant-2 .btn-soft"]
+    }
+  },
+
+  "hero_v2_reference": {
+    "frame": {
+      "margin": "24px var(--gutter) 0",
+      "border_radius": "16px",
+      "background_fallback": "linear-gradient(180deg, #1a0b2e 0%, #2a1a52 50%, #4b2f95 90%, #6b46c1 100%)",
+      "background_image": "images/hero-in-content-demo.png (cover, center)"
+    },
+    "overlay": "radial-gradient(ellipse 85% 85% at center, transparent 25%, rgba(0,0,0,0.75) 100%), radial-gradient(ellipse 60% 35% at 50% 32%, rgba(0,0,0,0.3), transparent 70%)",
+    "inner": {
+      "padding_base": "120px 24px 140px",
+      "padding_top_v2_default": "140px",
+      "padding_widescreen_min1280": "182px (top and bottom)",
+      "padding_mobile_max768": "80px 20px 96px",
+      "padding_mobile_max560": "64px 18px 80px",
+      "max_width": "880px",
+      "text_align": "center",
+      "color": "#ffffff"
+    },
+    "title": {
+      "font_size": "clamp(36px, 5.4vw, 64px)",
+      "line_height": 1.06,
+      "font_weight": 400,
+      "letter_spacing": "-0.02em",
+      "margin_bottom": "20px",
+      "text_shadow": "0 1px 2px rgba(0, 0, 0, 0.5), 0 2px 24px rgba(0, 0, 0, 0.25)"
+    },
+    "subtitle": {
+      "font_size": "clamp(15px, 1.4vw, 17px)",
+      "color": "rgba(255, 255, 255, 0.88)",
+      "max_width": "64ch",
+      "margin": "0 auto 32px"
+    },
+    "actions": {
+      "gap": "10px",
+      "btn_shadow": "0 1px 2px rgba(0, 0, 0, 0.5)",
+      "primary": "btn-primary (purple)",
+      "secondary": "btn-soft (frosted white over hero)"
+    },
+    "centered_logo_pill": {
+      "background": "Same as research_panel gradient.",
+      "shadow": "0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 18px rgba(20, 20, 30, 0.22)",
+      "border_radius": "999px",
+      "padding": "14px 26px",
+      "logo_height": "16px",
+      "applies_to": ".hero-variant-2 .header-inner > .logo"
+    },
+    "scrolled_header": {
+      "frosted_bg": "rgba(255, 255, 255, 0.55)",
+      "backdrop_filter": "blur(22px) saturate(180%)",
+      "transition": "background 0.35s, backdrop-filter 0.35s, border 0.35s",
+      "is_scrolled_class": ".hero-variant-2 .site-header.is-scrolled::before"
+    }
+  },
+
+  "transitions": {
+    "default_button": "background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease",
+    "default_link": "color 0.15s ease",
+    "image_hover_scale": "transform 0.25s ease",
+    "overlay_fade": "opacity 0.22s ease",
+    "header_scrolled_fade": "background-color 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease",
+    "letter_stagger_in": "transform 0.26s cubic-bezier(0.6, -0.28, 0.2, 1)",
+    "letter_stagger_out": "transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1)"
+  },
+
+  "breakpoints": {
+    "widescreen_min": "1280px",
+    "tablet_max": "1024px",
+    "mobile_max": "768px",
+    "small_mobile_max": "560px"
+  },
+
+  "z_index": {
+    "site_header": 50,
+    "site_header_pill": 3,
+    "site_header_actions": 3,
+    "nav_dropdown": 100,
+    "mobile_toggle": 51
+  },
+
+  "files": {
+    "logo_purple_wordmark": "images/logo.svg",
+    "logo_white_wordmark": "images/logo-white.svg",
+    "hero_image_v2": "images/hero-in-content-demo.png"
+  }
+}

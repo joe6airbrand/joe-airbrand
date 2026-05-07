@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Content Ads — Rembrand</title>
+  <meta name="description" content="Turn your best social posts into in-content ads that travel — programmatically distributed across CTV, online video, display, and DOOH. No reshoots, no production costs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Free fallback while testing: Hanken Grotesk is the closest Google Font to Halyard Display -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Halyard Display via Adobe Fonts kit -->
+  <link rel="stylesheet" href="https://use.typekit.net/psc7vjb.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Thin top bar -->
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <!-- ============== HEADER ============== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="logo-img" />
+      </a>
+
+      <div class="header-collapse">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger is-active" data-menu="advertisers" aria-haspopup="true" aria-expanded="false" data-stagger-text>Advertisers</button>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#publishers" data-stagger-text>Publishers</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#platform" data-stagger-text>Platform</a>
+            </li>
+            <li class="nav-item nav-item-has-menu">
+              <button type="button" class="nav-trigger" data-menu="resources" aria-haspopup="true" aria-expanded="false" data-stagger-text>Resources</button>
+            </li>
+          </ul>
+
+          <!-- Shared dropdown panel; JS swaps active panel and animates size -->
+          <div class="nav-dropdown" data-nav-dropdown aria-hidden="true">
+            <div class="nav-dropdown-inner">
+              <div class="nav-dropdown-panel" data-panel="advertisers">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Formats</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="index.html#advertisers">
+                          <span class="nav-mega-title">In-Content Ads</span>
+                          <span class="nav-mega-sub">Brand placements inside existing video</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="social-content-ads.html">
+                          <span class="nav-mega-title">Social Content Ads</span>
+                          <span class="nav-mega-sub">Social posts on every screen</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Get started</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="contact.html">
+                          <span class="nav-mega-title">Talk to sales</span>
+                          <span class="nav-mega-sub">Get a tailored walkthrough</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="nav-mega-title">See examples</span>
+                          <span class="nav-mega-sub">Live placements in the wild</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-dropdown-panel" data-panel="resources">
+                <div class="nav-mega">
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Learn</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="index.html#blog">
+                          <span class="nav-mega-title">Blog</span>
+                          <span class="nav-mega-sub">News and announcements</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#case-studies">
+                          <span class="nav-mega-title">Case Studies</span>
+                          <span class="nav-mega-sub">How brands work with Rembrand</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#vision">
+                          <span class="nav-mega-title">Vision</span>
+                          <span class="nav-mega-sub">Where ads are headed</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="nav-mega-col">
+                    <p class="nav-mega-heading">Company</p>
+                    <ul class="nav-mega-list">
+                      <li>
+                        <a href="about.html">
+                          <span class="nav-mega-title">About</span>
+                          <span class="nav-mega-sub">Our team and story</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#careers">
+                          <span class="nav-mega-title">Careers</span>
+                          <span class="nav-mega-sub">Open roles</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="index.html#creative-gallery">
+                          <span class="nav-mega-title">Creative Gallery</span>
+                          <span class="nav-mega-sub">Work made with Rembrand</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#login" class="btn btn-ghost" data-stagger-text>Log in</a>
+          <a href="contact.html" class="btn btn-primary" data-stagger-text>Contact us</a>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============== HERO ============== -->
+    <!--
+      Hero re-uses the standard .hero / .hero-media / .hero-overlay shell so the
+      shape, framing, and overlay treatment stay consistent with index.html.
+      The .sca-hero-media variant swaps in the wider social-and-creator art and
+      tunes the overlay so the headline sits comfortably on top.
+    -->
+    <section class="hero">
+      <div class="hero-media sca-hero-media" aria-hidden="true">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-inner">
+        <p class="sca-eyebrow">Social Content Ads</p>
+        <h1 class="hero-title">
+          Your best social content,<br class="br-desktop" />
+          on every screen it should be on.
+        </h1>
+        <p class="hero-sub">
+          Turn the posts you've already made on Instagram, TikTok, Facebook, X,
+          and Pinterest into in-content ads that run across CTV, online video,
+          display, and DOOH — without reshooting a single frame.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary" data-stagger-text>Talk to sales</a>
+          <a href="#formats" class="btn btn-soft" data-stagger-text>See the formats</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PARTNERS ============== -->
+    <section class="partners">
+      <div class="container">
+        <p class="partners-text">Trusted by the world's leading brands</p>
+        <div class="partners-row">
+          <div class="partners-track">
+            <img class="partner-logo" src="images/clients/always.svg" alt="Always" />
+            <img class="partner-logo" src="images/clients/pinterest.svg" alt="Pinterest" />
+            <img class="partner-logo" src="images/clients/garnier.svg" alt="Garnier" />
+            <img class="partner-logo" src="images/clients/prime-video.svg" alt="Prime Video" />
+            <img class="partner-logo" src="images/clients/harrys.svg" alt="Harry's" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== MISSION / LEAD ============== -->
+    <section class="mission">
+      <div class="container">
+        <p class="mission-text">
+          Audiences live inside social content.<br />
+          Now your campaigns can travel everywhere social does.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== TWO FORMATS (loose Runway "models" grid) ============== -->
+    <!--
+      Two-card layout that mirrors Runway's "every model you need" rhythm, but
+      pared down to the two formats Rembrand actually offers here. Each card
+      carries its own art, a tag, a tight blurb, and a deep-link to the section
+      below. New scoped classes live under /* SOCIAL CONTENT ADS PAGE */.
+    -->
+    <section class="sca-formats" id="formats">
+      <div class="container">
+        <p class="eyebrow sca-section-eyebrow">Two formats. Endless placements.</p>
+        <h2 class="sca-section-title">
+          One library of social posts.<br class="br-desktop" />
+          Two ways to put them everywhere.
+        </h2>
+
+        <div class="sca-format-grid">
+          <a href="#social-display" class="sca-format-card sca-format-card--display">
+            <div class="sca-format-card-media" aria-hidden="true"></div>
+            <div class="sca-format-card-body">
+              <span class="sca-format-tag">Display · Online Video · DOOH</span>
+              <h3>Social Display</h3>
+              <p>
+                Faithful, true-to-feel recreations of your social posts —
+                ready for programmatic distribution across the open web.
+              </p>
+              <span class="sca-format-link">Explore Social Display <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a href="#ctv-launchpad" class="sca-format-card sca-format-card--ctv">
+            <div class="sca-format-card-media" aria-hidden="true"></div>
+            <div class="sca-format-card-body">
+              <span class="sca-format-tag">CTV · 4K · Pause Ads</span>
+              <h3>CTV Launchpad</h3>
+              <p>
+                Beautiful 4K, TV-ready creative built from a single social
+                URL. Branding, versioning, and pause ads, all in one place.
+              </p>
+              <span class="sca-format-link">Explore CTV Launchpad <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+
+        <p class="sca-platforms-label">Bring posts directly from</p>
+        <ul class="sca-platforms" aria-label="Supported social platforms">
+          <li>Instagram</li>
+          <li>TikTok</li>
+          <li>Facebook</li>
+          <li>X</li>
+          <li>Pinterest</li>
+          <li>LinkedIn</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== DEEP-DIVES (re-using .latest alternating rows) ============== -->
+    <section class="latest">
+      <div class="container">
+        <h2 class="latest-title">How it works, format by format.</h2>
+
+        <article class="latest-row" id="social-display">
+          <a href="#" class="latest-thumb latest-thumb-3" aria-label="Learn more about Social Display">
+            <span class="latest-thumb-overlay" aria-hidden="true">
+              <span class="btn btn-stroke-light" data-stagger-text>See an example</span>
+            </span>
+          </a>
+          <div class="latest-text">
+            <p class="cap-lede">Social Display</p>
+            <h3>Your best posts, sized for every banner.</h3>
+            <p>
+              Drop in a post URL and Rembrand rebuilds it as a programmatic
+              banner that keeps the look, the comments, the likes — the whole
+              social feel. Slots into standard display placements, runs at
+              campaign scale, and skips the production cycle entirely.
+            </p>
+            <ul class="sca-bullets">
+              <li>Zero production cost — a post URL is your asset.</li>
+              <li>Engagement metrics tracked end-to-end.</li>
+              <li>Beats banner blindness with a familiar feed feel.</li>
+            </ul>
+            <a href="contact.html" class="btn btn-dark btn-sm" data-stagger-text>Talk to sales</a>
+          </div>
+        </article>
+
+        <article class="latest-row" id="ctv-launchpad">
+          <a href="#" class="latest-thumb sca-thumb-ctv" aria-label="Learn more about CTV Launchpad">
+            <span class="latest-thumb-overlay" aria-hidden="true">
+              <span class="btn btn-stroke-light" data-stagger-text>See an example</span>
+            </span>
+          </a>
+          <div class="latest-text">
+            <p class="cap-lede">CTV Launchpad</p>
+            <h3>Social, blown up to the biggest screen in the house.</h3>
+            <p>
+              Start from a post URL and end with a 4K, TV-ready ad. Pull
+              brand assets straight from your site, drop in interactive
+              overlays, QR codes, and dynamic location content, and ship to
+              every major CTV partner — without a separate creative cycle.
+            </p>
+            <ul class="sca-bullets">
+              <li>4K output, light/dark modes, pause-ad ready.</li>
+              <li>Auto-branding from your existing brand assets.</li>
+              <li>Customize with QR codes, product feeds, and overlays.</li>
+            </ul>
+            <a href="contact.html" class="btn btn-dark btn-sm" data-stagger-text>Talk to sales</a>
+          </div>
+        </article>
+
+        <article class="latest-row">
+          <a href="#" class="latest-thumb sca-thumb-metrics" aria-label="Why Social Content Ads work">
+            <span class="latest-thumb-overlay" aria-hidden="true">
+              <span class="btn btn-stroke-light" data-stagger-text>Read the case studies</span>
+            </span>
+          </a>
+          <div class="latest-text">
+            <p class="cap-lede">Why it works</p>
+            <h3>Authenticity at the scale of programmatic.</h3>
+            <p>
+              Social Content Ads keep the look and the social proof of your
+              original post — likes, comments, view counts — and pair it
+              with the targeting, frequency, and reach of programmatic.
+              You get the trust of a feed and the precision of a campaign.
+            </p>
+            <a href="#" class="btn btn-dark btn-sm" data-stagger-text>Read the case studies</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============== BENEFITS GRID (re-using .capabilities 4-card grid) ============== -->
+    <section class="capabilities sca-benefits">
+      <div class="container">
+        <p class="eyebrow sca-section-eyebrow sca-center">What you get</p>
+        <h2 class="sca-section-title sca-center">
+          More than performance.<br class="br-desktop" />
+          More than a banner.
+        </h2>
+
+        <div class="cap-grid sca-benefit-grid">
+          <article class="cap-card sca-benefit-card">
+            <div class="sca-benefit-icon" aria-hidden="true">⚡</div>
+            <h3>Combat creative fatigue</h3>
+            <p class="cap-body">
+              Spin up fresh ads in minutes by pulling whatever post is
+              landing this week — no shoot, no edit, no re-trafficking.
+            </p>
+          </article>
+
+          <article class="cap-card sca-benefit-card">
+            <div class="sca-benefit-icon" aria-hidden="true">◆</div>
+            <h3>Stand out, in feed</h3>
+            <p class="cap-body">
+              Familiar social shapes pattern-break the banner grid and pull
+              attention back without shouting at the viewer.
+            </p>
+          </article>
+
+          <article class="cap-card sca-benefit-card">
+            <div class="sca-benefit-icon" aria-hidden="true">⬢</div>
+            <h3>Test &amp; learn at scale</h3>
+            <p class="cap-body">
+              Cost-free creative means you can A/B at variant counts that
+              traditional production would never let you reach.
+            </p>
+          </article>
+
+          <article class="cap-card sca-benefit-card">
+            <div class="sca-benefit-icon" aria-hidden="true">◉</div>
+            <h3>Insight-grade tracking</h3>
+            <p class="cap-body">
+              Engagement signals — interactions, dwell, completion — flow
+              back automatically, so optimization isn't a guess.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CTA / CLOSING (re-using .research dark block) ============== -->
+    <section class="research">
+      <div class="research-inner container">
+        <div class="research-copy">
+          <p class="eyebrow eyebrow-light">Get started</p>
+          <h2 class="sca-cta-title">
+            Bring your social content<br class="br-desktop" />
+            to every screen that matters.
+          </h2>
+          <p class="research-text">
+            Tell us about your campaign and we'll show you what Social
+            Display and CTV Launchpad would look like with your posts.
+          </p>
+          <a href="contact.html" class="btn btn-primary" data-stagger-text>Contact sales</a>
+        </div>
+        <ul class="research-links">
+          <li><a href="#formats"><span data-stagger-text>Compare formats</span><span class="arrow">→</span></a></li>
+          <li><a href="#social-display"><span data-stagger-text>How Social Display works</span><span class="arrow">→</span></a></li>
+          <li><a href="#ctv-launchpad"><span data-stagger-text>How CTV Launchpad works</span><span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slim footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-brand" aria-label="Rembrand home">
+        <img src="images/logo.svg" alt="Rembrand" class="footer-brand-img" />
+      </a>
+      <p class="footer-copy">&copy; 2026 Rembrand, Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dev-only: font switcher. Choice persists via localStorage. Delete
+       this whole block (and the corresponding CSS / JS) before launch. -->
+  <div class="font-switcher" data-font-switcher>
+    <button type="button" class="font-switcher-btn is-active" data-font="default">Halyard</button>
+    <button type="button" class="font-switcher-btn" data-font="montserrat">Montserrat</button>
+    <button type="button" class="font-switcher-btn" data-font="helvetica">Helvetica</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+---
+description: Workspace-wide standards — types, helpers, DESIGN/LEARNINGS, clarification forms
+alwaysApply: true
+---
+
+# Marketing Site — workspace rules
+
+## Typed inputs, minimal defensive code
+
+- **Do not** add unnecessary runtime type checks or shape-guards inside functions.
+- **Do** push validation or normalization to boundaries (callers, parsers, build step, or typed contracts). Each function should **assume** parameters already match a single consistent type/shape so internals stay simple.
+
+## Helpers: few, flat, substantive
+
+- Use **few** helpers; avoid a forest of tiny wrappers.
+- A helper should be **worth extracting**: roughly **4+ lines** of real logic (not a one-liner alias). Prefer inline code for trivial one-offs.
+- **Nesting**: avoid stacking helpers more than **3 levels** deep; flatten or compose at the call site when it gets deeper.
+
+## User-facing work → DESIGN.md
+
+- Before changing **anything a visitor sees** (HTML, CSS, visible copy, images, motion), **read `DESIGN.md`** and align with it plus `style-guide.json` / `styles.css` as described there.
+
+## LEARNINGS.md — capture and consult
+
+- **Continuously** notice stable, generalizable preferences from the user (architecture, design process, communication style) and **add concise entries** to `LEARNINGS.md` (newest first). Remove or revise entries that a newer learning supersedes so the file stays internally consistent.
+- **At the start of each new user request** in this project: **read `LEARNINGS.md`**, prioritize **recent** entries, and resolve conflicts in favor of **newer** guidance.
+
+## Clarifications before proceeding
+
+- If **blocking questions** must be answered before work can proceed responsibly, **do not guess past them**: present a **structured feedback form** first (use **AskQuestion** in Cursor when it fits), then continue once the user has answered. If open-ended detail is required, ask those questions clearly in the same pre-flight step.

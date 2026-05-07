@@ -1,0 +1,39 @@
+---
+description: Workspace-wide — types, helpers, DESIGN.md, LEARNINGS.md, clarification forms
+alwaysApply: true
+---
+
+# Workspace global rules
+
+## 1. Typed inputs; no unnecessary runtime checking
+
+- Do **not** add unnecessary runtime type checks, shape guards, or defensive branching that re-validates inputs inside ordinary functions.
+- **Push** validation, parsing, and normalization to **boundaries** (callers, API layers, parsers, schemas). Each function should **assume** parameters already match one consistent type/shape so internals can use that shape **without** checking validity.
+
+## 2. Helpers: minimal, substantive, shallow nesting
+
+- Use **few** helpers; prefer direct code when it stays readable.
+- Extract a helper only when it carries **meaningful** logic—generally **4+ lines** (not thin one-line aliases).
+- Keep helper **call depth** shallow: avoid nesting helpers more than **three levels**; flatten or compose at the call site instead.
+
+## 3. User-facing work → DESIGN.md
+
+- For any change on **user-facing code paths** (what users see or interact with), **consult the workspace `DESIGN.md`** first and align with it. Use project-local design tokens or guides when this file points there.
+
+## 4. Capture learnings in LEARNINGS.md
+
+- **Continuously** notice stable, generalizable preferences from the user (architecture, design, process, collaboration style) and **record** concise entries in **`LEARNINGS.md`** (newest first). When a new learning **updates or replaces** an older one, **edit or remove** the outdated text so the log stays consistent.
+
+## 5. Load LEARNINGS.md each chat
+
+- At the **start of each new user request**, **read `LEARNINGS.md`**, emphasize **recent** entries, and resolve conflicts by favoring **newer** guidance.
+
+## 6. Clarifications → structured feedback before proceeding
+
+- If **blocking questions** must be answered before work can proceed responsibly, **do not proceed on guesses**: send a **structured feedback form** first—use **AskQuestion** in Cursor when it fits multiple-choice or enumerated options; otherwise ask clearly enumerated questions in one pre-flight step—then continue after the user responds.
+
+## 7. GitHub Pages deploy when pushing user-facing changes
+
+- When the user asks to **push**, **publish**, **deploy**, **ship**, **sync to GitHub**, or otherwise **land commits** that include **user-facing** updates they intend to go live on Pages, **also run** `./scripts/deploy-pages.sh` from the repo root (after commits are pushed to `origin` as needed) so the **`gh-pages`** branch matches the configured static output (`DEPLOY_SOURCE_REL` defaults to `Projects/Marketing Site`).
+- **First-time** Pages setup in a clone: run `./scripts/enable-github-pages.sh` once (`gh` must be authenticated). Do **not** store tokens or credentials in the repo.
+- If **only** non-site files changed (no deploy needed), skip the deploy script unless the user explicitly wants a redeploy.
