@@ -2786,6 +2786,15 @@ h1, h2, h3, h4, p { margin: 0; }
   }
 }
 
+/* Narrow landscape (e.g. iPhone rotated ~596×400): tuned portrait crops read poorly.
+   Reset to the base centered crop (matches default .gallery-slide-image). */
+@media (max-width: 768px) and (orientation: landscape) {
+  .gallery-page .gallery-slide .gallery-slide-image,
+  .gallery-page .gallery-slide .gallery-slide-image-off {
+    object-position: center;
+  }
+}
+
 /* Respect reduced-motion preference: keep snap, drop the blur reveals.
    The brand-removed off-image layer gets a separate rule so it stays
    hidden by default — `opacity: 1` would force it visible on top of
