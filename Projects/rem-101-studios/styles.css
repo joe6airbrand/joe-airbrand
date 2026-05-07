@@ -2766,11 +2766,11 @@ h1, h2, h3, h4, p { margin: 0; }
   /* iPhone-only focal deltas vs tablet (≤768px) bases — sec 1–4 here only. */
   .gallery-slide[data-slide="0"] .gallery-slide-image,
   .gallery-slide[data-slide="0"] .gallery-slide-image-off {
-    object-position: calc(100% + 90px) 50%;   /* tablet +70 +20 */
+    object-position: calc(100% + 80px) 50%;   /* sec1 iPhone: −10 vs prior +90 */
   }
   .gallery-slide[data-slide="1"] .gallery-slide-image,
   .gallery-slide[data-slide="1"] .gallery-slide-image-off {
-    object-position: calc(100% + 175px) 50%;   /* tablet +185 −10 */
+    object-position: calc(100% + 137px) 50%;   /* sec2 iPhone: −8 vs prior +145 */
   }
   .gallery-slide[data-slide="2"] .gallery-slide-image,
   .gallery-slide[data-slide="2"] .gallery-slide-image-off {
@@ -2778,7 +2778,7 @@ h1, h2, h3, h4, p { margin: 0; }
   }
   .gallery-slide[data-slide="3"] .gallery-slide-image,
   .gallery-slide[data-slide="3"] .gallery-slide-image-off {
-    object-position: 32% 50%;                  /* tablet calc(32%+150px) −150px */
+    object-position: calc(32% + 55px) 50%;     /* sec4 iPhone: +10 vs prior +45 */
   }
   .gallery-slide[data-slide="4"] .gallery-slide-image,
   .gallery-slide[data-slide="4"] .gallery-slide-image-off {
